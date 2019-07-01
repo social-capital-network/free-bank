@@ -1,7 +1,7 @@
 <template>
   <header id="header">
     <div class="logo">
-      <router-link to="/">w3ai - wallet</router-link>
+      <router-link to="/">$ECO system</router-link>
     </div>
     <nav>
       <ul>
@@ -12,7 +12,7 @@
           <router-link to="/signin">Sign In</router-link>
         </li>
         <li>
-          <router-link to="/dashboard">Dashboard</router-link>
+          <router-link to="/dashboard">Wallet</router-link>
         </li>
       </ul>
     </nav>
