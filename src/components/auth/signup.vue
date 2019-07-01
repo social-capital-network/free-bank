@@ -133,7 +133,7 @@ export default {
 
 .input input:focus {
   outline: none;
-  border: 1px solid #521751;
+  border: 1px solid #6aa84f;
   background-color: #eee;
 }
 
@@ -143,8 +143,8 @@ export default {
 }
 
 .interests button {
-  border: 1px solid #521751;
-  background: #521751;
+  border: 1px solid #6aa84f;
+  background: #6aa84f;
   color: white;
   padding: 6px;
   font: inherit;
@@ -153,7 +153,7 @@ export default {
 
 .interests button:hover,
 .interests button:active {
-  background-color: #8d4288;
+  background-color: #99cc99;
 }
 
 .interests input {
@@ -161,8 +161,8 @@ export default {
 }
 
 .submit button {
-  border: 1px solid #521751;
-  color: #521751;
+  border: 1px solid #6aa84f;
+  color: #6aa84f;
   padding: 10px 20px;
   font: inherit;
   cursor: pointer;
@@ -170,7 +170,7 @@ export default {
 
 .submit button:hover,
 .submit button:active {
-  background-color: #521751;
+  background-color: #6aa84f;
   color: white;
 }
 
