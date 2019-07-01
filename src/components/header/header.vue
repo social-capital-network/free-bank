@@ -1,18 +1,18 @@
 <template>
   <header id="header">
     <div class="logo">
-      <router-link to="/">$ECO system</router-link>
+      <router-link to="/">ai economy</router-link>
     </div>
     <nav>
       <ul>
         <li>
-          <router-link to="/signup">Sign Up</router-link>
+          <router-link to="/signup">sign up</router-link>
         </li>
         <li>
-          <router-link to="/signin">Sign In</router-link>
+          <router-link to="/signin">sign in</router-link>
         </li>
         <li>
-          <router-link to="/dashboard">Wallet</router-link>
+          <router-link to="/dashboard">wallet</router-link>
         </li>
       </ul>
     </nav>

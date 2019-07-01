@@ -1,7 +1,7 @@
 <template>
   <div id="welcome">
-    <h1>Time to learn some new skills!</h1>
-    <p>You found the best place to learn - and now you're just one sign in (or sign up) away from it!</p>
+    <h1>Time to learn realtime ai skills!</h1>
+    <p>You found the best place to learn ai - and now you're just one sign in (or sign up) away from it!</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
@@ -33,17 +33,17 @@
     margin: 10px;
     text-decoration: none;
     display: inline-block;
-    border: 1px solid #521751;
+    border: 1px solid #6aa84f;
     border-radius: 3px;
     width: 100px;
     padding: 10px;
     box-sizing: border-box;
-    color: #521751;
+    color: #6aa84f;
   }
 
   .cta a:hover,
   .cta a:active {
-    background-color: #521751;
+    background-color: #6aa84f;
     color: white;
   }
 </style>
