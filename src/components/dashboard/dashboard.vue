@@ -16,7 +16,7 @@ export default {
   },
   created () {
     axios
-      .get('https://ai-economy.firebaseio.com/users.json')
+      .get('/users.json')
       .then(res => {
         console.log(res)
         const data = res.data
