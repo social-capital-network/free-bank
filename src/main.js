@@ -9,17 +9,20 @@ axios.defaults.baseURL = 'https://ai-economy.firebaseio.com'
 axios.defaults.headers.common['Authorization'] = 'public-leaders-investors-coders'
 axios.defaults.headers.get['Accepts'] = 'application/json'
 
-axios.interceptors.request.use(config => {
+const reqInterceptor = axios.interceptors.request.use(config => {
   console.log('Request Interceptor', config)
   // To setup connection to the local blockchain node if available
   // config.headers.common['Authorization'] = ...
   // config.headers['PATENTING']
   return config
 })
-axios.interceptors.response.use(res => {
+const resInterceptor = axios.interceptors.response.use(res => {
   console.log('Response Interceptor', res)
   return res
 })
+
+axios.interceptors.request.eject(reqInterceptor)
+axios.interceptors.response.eject(resInterceptor)
 
 Vue.config.productionTip = false
 
