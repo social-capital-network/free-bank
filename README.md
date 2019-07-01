@@ -1,4 +1,6 @@
-# ai-wallet
+# ai economy wallet
+
+The blockchain wallet for the ai economy currencies
 
 ## Project setup
 ```
