@@ -93,7 +93,11 @@ export default {
         terms: this.terms
       }
       console.log(formData)
-      axios.post('/users.json', formData)
+      axios.post('/signupNewUser?key=AIzaSyDaOYYDot00MmBtEfyJq2mvVGNOoTMLUzc', {
+        email: formData.email,
+        password: formData.password,
+        returnSecureToken: true
+      })
         .then(res => console.log(res))
         .catch(error => console.log(error))
     }
