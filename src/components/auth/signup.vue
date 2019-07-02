@@ -51,14 +51,21 @@
           <button @click="onAddInterest" type="button">Add Interest</button>
           <div class="interest-list">
             <div
-              class="input"
-              v-for="(interestInput, index) in interestInputs"
-              :key="interestInput.id"
+                    class="input"
+                    v-for="(interestInput, index) in interestInputs"
+                    :class="{invalid: $v.interestInputs.$each[index].$error}"
+                    :key="interestInput.id"
             >
-              <label :for="interestInput.id">Interest #{{ index }}</label>
-              <input type="text" :id="interestInput.id" v-model="interestInput.value" />
+              <label :for="interestInput.id">Interest #{{ index + 1 }}</label>
+              <input
+                      type="text"
+                      :id="interestInput.id"
+                      @blur="$v.interestInputs.$each[index].value.$touch()"
+                      v-model="interestInput.value" />
               <button @click="onDeleteInterest(interestInput.id)" type="button">X</button>
             </div>
+            <p v-if="$v.interestInputs.minLen - 1">You have to specify at least {{ $v.interestInputs.$params.minLen.min }} interests</p>
+            <p v-if="!$v.interestInputs.required">Please add interests.</p>
           </div>
         </div>
         <div class="input inline" :class="{invalid: $v.terms.$invalid}">
@@ -113,6 +120,16 @@ export default {
     },
     terms: {
       checked: (value, vm) => vm.country === 'transylvania' ? true : value
+    },
+    interestInputs: {
+      required,
+      minLen: minLength(2),
+      $each: {
+        value: {
+          required,
+          minLen: minLength(2)
+        }
+      }
     }
   },
   methods: {
