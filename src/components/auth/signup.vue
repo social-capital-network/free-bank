@@ -21,9 +21,13 @@
                   v-model.number="age" />
           <p v-if="!$v.age.minVal">You have to be at least {{ $v.age.$params.minVal.min }} y.o. 18 for ai patenting.</p>
         </div>
-        <div class="input">
+        <div class="input" :class="{invalid: $v.password.$error}">
           <label for="password">Password</label>
-          <input type="password" id="password" v-model="password" />
+          <input
+                  type="password"
+                  id="password"
+                  @blur="$v.password.$touch()"
+                  v-model="password" />
         </div>
         <div class="input">
           <label for="confirm-password">Confirm Password</label>
@@ -66,7 +70,7 @@
 </template>
 
 <script>
-import { required, email, numeric, minValue } from 'vuelidate/lib/validators'
+import { required, email, numeric, minValue, minLength } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
@@ -88,6 +92,10 @@ export default {
       required,
       numeric,
       minVal: minValue(10)
+    },
+    password: {
+      required,
+      minLen: minLength(6)
     }
   },
   methods: {
