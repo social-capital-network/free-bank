@@ -58,7 +58,7 @@ export default new Vuex.Store({
       if (!state.idToken) {
         return
       }
-      globalAxios.post('/user.json' + '?auth=' + state.idToken, userData)
+      globalAxios.post('/users.json' + '?auth=' + state.idToken, userData)
         .then(res => console.log(res))
         .catch(error => console.log(error))
     },
@@ -66,7 +66,7 @@ export default new Vuex.Store({
       if (!state.idToken) {
         return
       }
-      globalAxios.get('/user.json' + '?auth=' + state.idToken)
+      globalAxios.get('/users.json' + '?auth=' + state.idToken)
         .then(res => {
           console.log(res)
           const data = res.data
