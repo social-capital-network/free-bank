@@ -43,7 +43,7 @@
             <option value="usa">USA</option>
             <option value="india">India</option>
             <option value="canada">Canada</option>
-            <option value="transylvania">Transylvania</option>
+            <option value="eukarya">Eukarya</option>
           </select>
         </div>
         <div class="interests">
@@ -119,7 +119,7 @@ export default {
       })
     },
     terms: {
-      checked: (value, vm) => vm.country === 'transylvania' ? true : value
+      checked: (value, vm) => vm.country === 'eukarya' ? true : value
     },
     interestInputs: {
       required,
