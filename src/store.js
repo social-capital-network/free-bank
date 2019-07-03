@@ -50,6 +50,7 @@ export default new Vuex.Store({
           const expirationDate = new Date(now.getTime() + res.data.expiresIn * 1000)
           localStorage.setItem('token', res.data.idToken)
           localStorage.setItem('userId', res.data.localId)
+          localStorage.setItem('userEmail', authData.email)
           localStorage.setItem('expirationDate', expirationDate)
           dispatch('storeUser', authData)
           dispatch('setLogoutTimer', res.data.expiresIn)
@@ -69,6 +70,7 @@ export default new Vuex.Store({
           const expirationDate = new Date(now.getTime() + res.data.expiresIn * 1000)
           localStorage.setItem('token', res.data.idToken)
           localStorage.setItem('userId', res.data.localId)
+          localStorage.setItem('userEmail', authData.email)
           localStorage.setItem('expirationDate', expirationDate)
           commit('authUser', {
             token: res.data.idToken,
@@ -99,6 +101,7 @@ export default new Vuex.Store({
       localStorage.removeItem('expirationDate')
       localStorage.removeItem('token')
       localStorage.removeItem('userId')
+      localStorage.removeItem('userEmail')
       router.replace('/signin')
     },
     storeUser ({ commit, state }, userData) {
@@ -113,9 +116,10 @@ export default new Vuex.Store({
       if (!state.idToken) {
         return
       }
+      // console.log(state.userId)
       globalAxios.get('/users.json' + '?auth=' + state.idToken)
         .then(res => {
-          console.log(res)
+          // console.log(res)
           const data = res.data
           const users = []
           for (let key in data) {
@@ -123,8 +127,12 @@ export default new Vuex.Store({
             user.id = key
             users.push(user)
           }
-          console.log(users)
-          commit('storeUser', users[0])
+          // console.log(users)
+          // commit('storeUser', users[0])
+          const user = users.find((user) => { 
+            return user.email === localStorage.getItem('userEmail')
+          })
+          commit('storeUser', user)
         })
         .catch(error => console.log(error))
     }

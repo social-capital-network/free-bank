@@ -209,10 +209,10 @@ export default {
       }
     };
   },
+  created() {
+    this.$store.dispatch("fetchUser");
+  },
   computed: {
-    created() {
-      this.$store.dispatch("fetchUser");
-    },
     email() {
       return !this.$store.getters.user ? false : this.$store.getters.user.email;
     },
