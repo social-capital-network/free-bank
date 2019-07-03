@@ -129,7 +129,7 @@ export default new Vuex.Store({
           }
           // console.log(users)
           // commit('storeUser', users[0])
-          const user = users.find((user) => { 
+          const user = users.find((user) => {
             return user.email === localStorage.getItem('userEmail')
           })
           commit('storeUser', user)

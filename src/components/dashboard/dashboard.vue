@@ -187,7 +187,7 @@
 </template>
 
 <script>
-import minerAxios from "../../axios-miner";
+import minerAxios from '../../axios-miner';
 
 export default {
   data() {
@@ -210,157 +210,157 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch("fetchUser");
+    this.$store.dispatch('fetchUser')
   },
   computed: {
     email() {
       return !this.$store.getters.user ? false : this.$store.getters.user.email;
     },
     loadedData: function() {
-      if (this.view === "chain") {
-        return this.blockchain;
+      if (this.view === 'chain') {
+        return this.blockchain
       } else {
-        return this.openTransactions;
+        return this.openTransactions
       }
     }
   },
   methods: {
     onCreateWallet: function() {
       // Send Http request to create a new wallet (and return keys)
-      var vm = this;
+      var vm = this
       this.walletLoading = true;
       minerAxios
-        .post("/wallet")
+        .post('/wallet')
         .then(function(response) {
-          vm.error = null;
+          vm.error = null
           vm.success =
-            "Created ECO Wallet! Public Key: " +
+            'Created ECO Wallet! Public Key: ' +
             response.data.public_key +
-            ", Private Key: " +
-            response.data.private_key;
+            ', Private Key: ' +
+            response.data.private_key
           vm.wallet = {
             public_key: response.data.public_key,
             private_key: response.data.private_key
-          };
-          vm.funds = response.data.funds;
-          vm.walletLoading = false;
+          }
+          vm.funds = response.data.funds
+          vm.walletLoading = false
         })
         .catch(function(error) {
-          vm.success = null;
-          vm.error = error.response.data.message;
-          vm.wallet = null;
-          vm.walletLoading = false;
+          vm.success = null
+          vm.error = error.response.data.message
+          vm.wallet = null
+          vm.walletLoading = false
         });
     },
     onLoadWallet: function() {
       // Send Http request to load an existing wallet (from a file on the server)
-      var vm = this;
-      this.walletLoading = true;
+      var vm = this
+      this.walletLoading = true
       minerAxios
-        .get("/wallet")
+        .get('/wallet')
         .then(function(response) {
           vm.error = null;
           vm.success =
-            "Your ECO Wallet! Public Key: " +
+            'Your ECO Wallet Public Key: ' +
             response.data.public_key +
-            ", Private Key: " +
+            ', Private Key: ' +
             response.data.private_key;
           vm.wallet = {
             public_key: response.data.public_key,
             private_key: response.data.private_key
-          };
-          vm.funds = response.data.funds;
-          vm.walletLoading = false;
+          }
+          vm.funds = response.data.funds
+          vm.walletLoading = false
         })
         .catch(function(error) {
-          vm.success = null;
+          vm.success = null
           vm.error = error.response.data.message;
-          vm.wallet = null;
-          vm.walletLoading = false;
-        });
+          vm.wallet = null
+          vm.walletLoading = false
+        })
     },
     onSendTx: function() {
       // Send Transaction to backend
-      this.txLoading = true;
-      var vm = this;
+      this.txLoading = true
+      var vm = this
       minerAxios
-        .post("/transaction", {
+        .post('/transaction', {
           recipient: this.outgoingTx.recipient,
           amount: this.outgoingTx.amount
         })
         .then(function(response) {
-          vm.error = null;
-          vm.success = response.data.message;
-          console.log(response.data);
-          vm.funds = response.data.funds;
-          vm.txLoading = false;
+          vm.error = null
+          vm.success = response.data.message
+          console.log(response.data)
+          vm.funds = response.data.funds
+          vm.txLoading = false
         })
         .catch(function(error) {
-          vm.success = null;
-          vm.error = error.response.data.message;
-          vm.txLoading = false;
+          vm.success = null
+          vm.error = error.response.data.message
+          vm.txLoading = false
         });
     },
     onMine: function() {
-      var vm = this;
+      var vm = this
       minerAxios
-        .post("/mine")
+        .post('/mine')
         .then(function(response) {
-          vm.error = null;
-          vm.success = response.data.message;
-          console.log(response.data);
-          vm.funds = response.data.funds;
+          vm.error = null
+          vm.success = response.data.message
+          console.log(response.data)
+          vm.funds = response.data.funds
         })
         .catch(function(error) {
-          vm.success = null;
-          vm.error = error.response.data.message;
+          vm.success = null
+          vm.error = error.response.data.message
         });
     },
     onResolve: function() {
-      var vm = this;
+      var vm = this
       minerAxios
-        .post("/resolve-conflicts")
+        .post('/resolve-conflicts')
         .then(function(response) {
-          vm.error = null;
-          vm.success = response.data.message;
+          vm.error = null
+          vm.success = response.data.message
         })
         .catch(function(error) {
-          vm.success = null;
-          vm.error = error.response.data.message;
+          vm.success = null
+          vm.error = error.response.data.message
         });
     },
     onLoadData: function() {
-      if (this.view === "chain") {
+      if (this.view === 'chain') {
         // Load blockchain data
-        var vm = this;
-        this.dataLoading = true;
+        var vm = this
+        this.dataLoading = true
         minerAxios
-          .get("/chain")
+          .get('/chain')
           .then(function(response) {
-            vm.blockchain = response.data;
-            vm.dataLoading = false;
+            vm.blockchain = response.data
+            vm.dataLoading = false
           })
           .catch(function(error) {
-            vm.dataLoading = false;
-            vm.error = "Something went wrong.";
+            vm.dataLoading = false
+            vm.error = 'Something went wrong.'
           });
       } else {
         // Load transaction data
-        var vm = this;
+        var vm = this
         minerAxios
-          .get("/transactions")
+          .get('/transactions')
           .then(function(response) {
-            vm.openTransactions = response.data;
-            vm.dataLoading = false;
+            vm.openTransactions = response.data
+            vm.dataLoading = false
           })
-          .catch(function(error) {
-            vm.dataLoading = false;
-            vm.error = "Something went wrong.";
-          });
+          .catch (function (error) {
+            vm.dataLoading = false
+            vm.error = 'Something went wrong.'
+          })
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>
