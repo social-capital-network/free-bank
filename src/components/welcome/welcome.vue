@@ -1,7 +1,7 @@
 <template>
   <div id="welcome">
     <h1>Build valuable ai skills!</h1>
-    <p>You found the best place to build valuable ai skills - and now you're just one sign in (or sign up) away from it!</p>
+    <p>You found the best place to build next gen ai skills - and now you're just one sign in (or sign up) away from it!</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
