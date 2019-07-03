@@ -1,7 +1,6 @@
 <template>
   <div id="dashboard">
-    <h1>ai wallet</h1>
-    <p>You should only get here if you're authenticated!</p>
+    <h1>social-ai capital</h1>
     <p v-if="email">Your email address: {{ email }}</p>
   </div>
 </template>
@@ -26,6 +25,6 @@ p {
 }
 
 p {
-  color: red;
+  color: #333;
 }
 </style>
