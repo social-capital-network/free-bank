@@ -262,9 +262,9 @@ export default {
           vm.error = null;
           vm.success =
             'Your ECO Wallet Public Key: ' +
-            response.data.public_key +
-            ', Private Key: ' +
-            response.data.private_key;
+            response.data.public_key
+            // ', Private Key: ' +
+            // response.data.private_key
           vm.wallet = {
             public_key: response.data.public_key,
             private_key: response.data.private_key
@@ -415,5 +415,9 @@ p {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.btn {
+  margin-right: 12px;
 }
 </style>
