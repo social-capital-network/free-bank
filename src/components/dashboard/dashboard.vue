@@ -65,7 +65,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="amount">Amount of $ECO</label>
+              <label for="amount">Amount of ECO</label>
               <input
                 v-model.number="outgoingTx.amount"
                 type="number"
@@ -262,7 +262,7 @@ export default {
           vm.error = null;
           vm.success =
             'Your ECO Wallet Public Key: ' +
-            response.data.public_key
+            response.data.public_key.substring(0, 25) + ' ...'
             // ', Private Key: ' +
             // response.data.private_key
           vm.wallet = {
