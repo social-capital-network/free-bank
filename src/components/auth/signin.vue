@@ -11,7 +11,7 @@
           <input type="password" id="password" v-model="password" />
         </div>
         <div class="submit">
-          <button type="submit">Submit</button>
+          <button type="submit">Sign in</button>
         </div>
       </form>
     </div>
@@ -41,7 +41,7 @@ export default {
 
 <style scoped>
 .signin-form {
-  width: 400px;
+  width: 300px;
   margin: 30px auto;
   border: 1px solid #eee;
   padding: 20px;
