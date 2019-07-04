@@ -3,14 +3,14 @@
     <div class="signup-form">
       <form @submit.prevent="onSubmit">
         <div class="input" :class="{invalid: $v.email.$error}">
-          <label for="email">Mail</label>
+          <label for="email">Email</label>
           <input
                   type="email"
                   id="email"
                   @blur="$v.email.$touch()"
                   v-model="email" />
-          <p v-if="!$v.email.email">Please provide a valid email address.</p>
-          <p v-if="!$v.email.required">This field must not be empty.</p>
+          <p v-if="!$v.email.email">valid email address required.</p>
+          <p v-if="!$v.email.required">required</p>
         </div>
         <div class="input" :class="{invalid: $v.age.$error}">
           <label for="age">Your Age</label>
@@ -19,7 +19,7 @@
                   id="age"
                   @blur="$v.age.$touch()"
                   v-model.number="age" />
-          <p v-if="!$v.age.minVal">You have to be at least {{ $v.age.$params.minVal.min }} y.o. 18 for ai patenting.</p>
+          <p v-if="!$v.age.minVal">Min {{ $v.age.$params.minVal.min }} y.o. 18 for ai patenting.</p>
         </div>
         <div class="input" :class="{invalid: $v.password.$error}">
           <label for="password">Password</label>
@@ -41,13 +41,15 @@
           <label for="country">Country</label>
           <select id="country" v-model="country">
             <option value="usa">USA</option>
+            <option value="china">China</option>
             <option value="india">India</option>
             <option value="canada">Canada</option>
-            <option value="eukarya">Eukarya</option>
+            <option value="uk">United Kindom</option>
+            <option value="eukarya">Eukarya Super Kingdom</option>
           </select>
         </div>
         <div class="interests">
-          <h3>Add your Interests</h3>
+          <h3>Add Interests</h3>
           <button @click="onAddInterest" type="button">Add Interest</button>
           <div class="interest-list">
             <div
@@ -65,7 +67,7 @@
               <button @click="onDeleteInterest(interestInput.id)" type="button">X</button>
             </div>
             <p v-if="$v.interestInputs.minLen - 1">You have to specify at least {{ $v.interestInputs.$params.minLen.min }} interests</p>
-            <p v-if="!$v.interestInputs.required">Please add interests.</p>
+            <p v-if="!$v.interestInputs.required">Add your interests in ai society.</p>
           </div>
         </div>
         <div class="input inline" :class="{invalid: $v.terms.$invalid}">
@@ -74,10 +76,10 @@
                   id="terms"
                   @change="$v.terms.$touch()"
                   v-model="terms" />
-          <label for="terms">Accept Terms of Use</label>
+          <label for="terms"> Accept Terms of Use</label>
         </div>
         <div class="submit">
-          <button type="submit" :disabled="$v.$invalid">Submit</button>
+          <button type="submit" :disabled="$v.$invalid">Sign Up</button>
         </div>
       </form>
     </div>
@@ -173,7 +175,7 @@ export default {
 
 <style scoped>
 .signup-form {
-  width: 400px;
+  width: 300px;
   margin: 30px auto;
   border: 1px solid #eee;
   padding: 20px;
@@ -265,5 +267,13 @@ export default {
   background-color: transparent;
   color: #ccc;
   cursor: not-allowed;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin: 15px 0px 10px 0px;
 }
 </style>
