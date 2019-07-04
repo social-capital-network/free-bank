@@ -1,4 +1,4 @@
-# ai eco cell
+# ai cell wallet
 
 The blockchain wallet for the ai economy currencies
 
