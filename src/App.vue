@@ -22,8 +22,15 @@ export default {
 </script>
 
 <style>
-  body, html {
+  body, html {  
+    position: relative;
+    min-height: 100vh;
+    margin-bottom: 56px;
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  #app {
+    padding-bottom: 112px; 
   }
 </style>
