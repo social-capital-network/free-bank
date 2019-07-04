@@ -1,7 +1,7 @@
 <template>
   <div id="welcome">
     <h1>coin skills</h1>
-    <p>You found the best place to build next gen ai skills - and now you're just one sign in (or sign up) away from it!</p>
+    <p>for faster social progress</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
@@ -21,7 +21,7 @@
 
   h1 {
     text-align: center;
-    margin-top: 5px;
+    margin-top: 12px;
   }
 
   p {
