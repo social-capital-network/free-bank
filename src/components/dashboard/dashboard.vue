@@ -58,7 +58,7 @@
                 type="text"
                 class="form-control"
                 id="recipient"
-                placeholder="Enter email/job id"
+                placeholder="Enter email - job id"
               />
             </div>
             <div class="form-group">

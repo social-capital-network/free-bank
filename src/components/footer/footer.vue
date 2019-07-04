@@ -13,27 +13,12 @@
   </footer>
 </template>
 
-<script>
-export default {
-  computed: {
-    auth () {
-      return this.$store.getters.isAuthenticated
-    }
-  },
-  methods: {
-    onLogout () {
-      this.$store.dispatch('logout')
-    }
-  }
-}
-</script>
-
 <style scoped>
   #footer {
     height: 56px;
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background-color: #6aa84f;
     padding: 0 20px;
@@ -64,7 +49,7 @@ export default {
   }
 
   li {
-    margin: 0 12px;
+    margin-right: 20px;
   }
 
   li a {
