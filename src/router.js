@@ -24,7 +24,8 @@ const routes = [
         next('/signin')
       }
     }
-  }
+  },
+  { path: '*', redirect: '/'}
 ]
 
 export default new VueRouter({ mode: 'history', routes })
