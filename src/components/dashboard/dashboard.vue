@@ -135,7 +135,7 @@
                     class="btn btn-link"
                     type="button"
                     @click="showElement === index ? showElement = null : showElement = index"
-                  >Block | Contrib. #{{ data.index }}</button>
+                  >contribution block #{{ data.index }}</button>
                 </h5>
               </div>
               <div v-if="view === 'chain'" class="collapse" :class="{show: showElement === index}">
