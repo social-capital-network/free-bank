@@ -31,6 +31,6 @@ export default {
   }
 
   #app {
-    padding-bottom: 112px; 
+    padding-bottom: 84px; 
   }
 </style>

@@ -40,7 +40,7 @@
 
       </div>
         <div class="col text-right">
-          <h4>funds: {{ funds.toFixed(0) }}.ai</h4>
+          <h4>live: {{ funds.toFixed(0) }}.ai &#162;</h4>
         </div>      
       <hr />
       <div v-if="!wallet" class="row">
@@ -52,7 +52,7 @@
         <div class="col">
           <form @submit.prevent="onSendTx">
             <div class="form-group">
-              <label for="recipient">Recipient Cell</label>
+              <label for="recipient">Recipient cell</label>
               <input
                 v-model="outgoingTx.recipient"
                 type="text"
@@ -257,7 +257,7 @@ export default {
         .then(function(response) {
           vm.error = null;
           vm.success =
-            'ai Cell Public Key: ' +
+            'ai cell Public Key: ' +
             response.data.public_key.substring(0, 20) + ' ...'
             // ', Private Key: ' +
             // response.data.private_key
