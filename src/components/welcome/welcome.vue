@@ -1,6 +1,6 @@
 <template>
   <div id="welcome">
-    <h1>Build valuable ai skills!</h1>
+    <h1>coin skills</h1>
     <p>You found the best place to build next gen ai skills - and now you're just one sign in (or sign up) away from it!</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
@@ -10,6 +10,10 @@
 </template>
 
 <style scoped>
+  div {
+    margin: 0px;
+  }
+
   #welcome {
     width: 80%;
     margin: auto;
@@ -17,6 +21,7 @@
 
   h1 {
     text-align: center;
+    margin-top: 5px;
   }
 
   p {
@@ -24,8 +29,8 @@
   }
 
   .cta {
-    width: 300px;
-    margin: auto;
+    width: 100%;
+    margin: 0px;
     text-align: center;
   }
 
