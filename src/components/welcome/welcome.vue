@@ -6,6 +6,7 @@
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
     </div>
+    <p>bank on your live social capital</p>
   </div>
 </template>
 
@@ -30,7 +31,7 @@
 
   .cta {
     width: 100%;
-    margin: 0px;
+    margin: 0px 0px 12px;
     text-align: center;
   }
 
