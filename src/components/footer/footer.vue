@@ -1,0 +1,88 @@
+<template>
+  <footer id="footer">
+    <nav>
+      <ul>
+        <li>
+          <a href="https://github.com/ai-economy/ai-eco-wallet">free ai cell</a>
+        </li>
+        <li>
+          MIT © Ianta Labs
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</template>
+
+<script>
+export default {
+  computed: {
+    auth () {
+      return this.$store.getters.isAuthenticated
+    }
+  },
+  methods: {
+    onLogout () {
+      this.$store.dispatch('logout')
+    }
+  }
+}
+</script>
+
+<style scoped>
+  #footer {
+    height: 56px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6aa84f;
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-weight: bold;
+    color: white;
+  }
+
+  .logo a {
+    text-decoration: none;
+    color: white;
+  }
+
+  nav {
+    height: 100%;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+
+  li {
+    margin: 0 12px;
+  }
+
+  li a {
+    text-decoration: none;
+    color: white;
+  }
+
+  li a:hover,
+  li a:active,
+  li a.router-link-active {
+    color: #333;
+  }
+
+  .logout {
+    background-color: transparent;
+    border: none;
+    font: inherit;
+    color: white;
+    cursor: pointer;
+  }
+</style>
