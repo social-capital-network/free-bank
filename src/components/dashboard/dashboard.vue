@@ -2,11 +2,7 @@
   <div id="dashboard">
     <h1>social.ai coins</h1>
     <p v-if="email">cell email: {{ email }}</p>
-
     <div class="container">
-      <div class="row mb-3">
-        <div class="col"></div>
-      </div>
       <div class="row">
         <div class="col">
           <ul class="nav nav-pills">
@@ -30,8 +26,8 @@
               @click="onCreateWallet"
               title="Create new Project Wallet"
             >Jobs</button>
-            <button class="btn btn-primary" @click="onLoadWallet" title="Investor Wallet">Bank</button>
-            <button class="btn btn-primary" title="Knowledge Wallet">Skills</button>
+             <button class="btn btn-primary" title="Knowledge Wallet">Skills</button>
+             <button class="btn btn-primary" @click="onLoadWallet" title="Investor Wallet">Bank</button>
           </div>
 
           <div v-if="walletLoading" class="lds-ring">
@@ -41,14 +37,15 @@
             <div></div>
           </div>
         </div>
-        <div class="col text-right">
-          <h4>{{ funds.toFixed(0) }}.ai</h4>
-        </div>
+
       </div>
+        <div class="col text-right">
+          <h4>funds: {{ funds.toFixed(0) }}.ai</h4>
+        </div>      
       <hr />
       <div v-if="!wallet" class="row">
         <div class="col">
-          <div class="alert alert-warning">Create an Eco Wallet to start Collaboration and Progress!</div>
+          <div class="alert alert-warning">Create a Cell Wallet to start Collaboration and Progress!</div>
         </div>
       </div>
       <div v-if="wallet" class="row">
@@ -61,11 +58,11 @@
                 type="text"
                 class="form-control"
                 id="recipient"
-                placeholder="Enter key"
+                placeholder="Enter email/job id"
               />
             </div>
             <div class="form-group">
-              <label for="amount">.ai Amount</label>
+              <label for="amount">.ai Amount or Skill id</label>
               <input
                 v-model.number="outgoingTx.amount"
                 type="number"
@@ -73,7 +70,7 @@
                 class="form-control"
                 id="amount"
               />
-              <small class="form-text text-muted">no fractions for AI coins</small>
+              <small class="form-text text-muted">no fractions for .ai coins</small>
             </div>
             <div v-if="txLoading" class="lds-ring">
               <div></div>
@@ -418,5 +415,13 @@ p {
 
 .btn {
   margin-right: 5px;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
+h4 {
+  margin-top: 14px;
 }
 </style>
