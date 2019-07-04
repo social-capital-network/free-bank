@@ -16,6 +16,9 @@
 <style scoped>
   #footer {
     height: 56px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
