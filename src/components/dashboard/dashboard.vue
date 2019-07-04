@@ -1,7 +1,7 @@
 <template>
   <div id="dashboard">
-    <h1>your social-ai capital</h1>
-    <p v-if="email">email id: {{ email }}</p>
+    <h1>social.ai coins</h1>
+    <p v-if="email">cell email: {{ email }}</p>
 
     <div class="container">
       <div class="row mb-3">
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="col text-right">
-          <h4>Funds: {{ funds.toFixed(2) }} ECO</h4>
+          <h4>{{ funds.toFixed(0) }}.ai</h4>
         </div>
       </div>
       <hr />
@@ -55,7 +55,7 @@
         <div class="col">
           <form @submit.prevent="onSendTx">
             <div class="form-group">
-              <label for="recipient">Recipient Key</label>
+              <label for="recipient">Recipient Cell</label>
               <input
                 v-model="outgoingTx.recipient"
                 type="text"
@@ -65,7 +65,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="amount">Amount of ECO</label>
+              <label for="amount">.ai Amount</label>
               <input
                 v-model.number="outgoingTx.amount"
                 type="number"
@@ -73,7 +73,7 @@
                 class="form-control"
                 id="amount"
               />
-              <small class="form-text text-muted">Fractions are possible (e.g. 5.67)</small>
+              <small class="form-text text-muted">no fractions for AI coins</small>
             </div>
             <div v-if="txLoading" class="lds-ring">
               <div></div>
@@ -99,12 +99,12 @@
                 :class="{active: view === 'chain'}"
                 href="#"
                 @click="view = 'chain'"
-              >Project Blockchain</a>
+              >Job Blockchain</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" :class="{active: view === 'tx'}" href="#" @click="view = 'tx'">
                 Open
-                Transactions
+                Deals
               </a>
             </li>
           </ul>
@@ -115,12 +115,11 @@
           <button
             class="btn btn-primary"
             @click="onLoadData"
-          >{{ view === 'chain' ? 'Load Blockchain' : 'Load Transactions' }}</button>
+          >{{ view === 'chain' ? 'Contribute' : 'Commits' }}</button>
           <button v-if="view === 'chain' && wallet" class="btn btn-success" @click="onMine">
             Mine
-            Coins
           </button>
-          <button class="btn btn-warning" @click="onResolve">Resolve Conflicts</button>
+          <button class="btn btn-warning" @click="onResolve">Compete</button>
         </div>
       </div>
       <div class="row">
@@ -261,8 +260,8 @@ export default {
         .then(function(response) {
           vm.error = null;
           vm.success =
-            'Your ECO Wallet Public Key: ' +
-            response.data.public_key.substring(0, 25) + ' ...'
+            'ai Cell Public Key: ' +
+            response.data.public_key.substring(0, 20) + ' ...'
             // ', Private Key: ' +
             // response.data.private_key
           vm.wallet = {
@@ -418,6 +417,6 @@ p {
 }
 
 .btn {
-  margin-right: 12px;
+  margin-right: 5px;
 }
 </style>
