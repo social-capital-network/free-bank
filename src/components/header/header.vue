@@ -73,7 +73,7 @@ export default {
   }
 
   li {
-    margin: 0 16px;
+    margin: 0 12px;
   }
 
   li a {
