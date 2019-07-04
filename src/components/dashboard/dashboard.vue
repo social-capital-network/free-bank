@@ -1,6 +1,6 @@
 <template>
   <div id="dashboard">
-    <h1>social.ai coins</h1>
+    <h1>social ai coins</h1>
     <p v-if="email">cell email: {{ email }}</p>
     <div class="container">
       <div class="row">
@@ -40,7 +40,7 @@
 
       </div>
         <div class="col text-right">
-          <h4>live: {{ funds.toFixed(0) }}.ai &#162;</h4>
+          <h4>live: {{ funds.toFixed(0) }} ai &#162;</h4>
         </div>      
       <hr />
       <div v-if="!wallet" class="row">
@@ -62,7 +62,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="amount">.ai Amount or Skill id</label>
+              <label for="amount">ai Amount or Skill id</label>
               <input
                 v-model.number="outgoingTx.amount"
                 type="number"
@@ -70,7 +70,7 @@
                 class="form-control"
                 id="amount"
               />
-              <small class="form-text text-muted">no fractions for .ai coins</small>
+              <small class="form-text text-muted">no fractions for ai coins</small>
             </div>
             <div v-if="txLoading" class="lds-ring">
               <div></div>
@@ -112,7 +112,7 @@
           <button
             class="btn btn-primary"
             @click="onLoadData"
-          >{{ view === 'chain' ? 'Contribute' : 'Commits' }}</button>
+          >{{ view === 'chain' ? 'Cooperate' : 'Commits' }}</button>
           <button v-if="view === 'chain' && wallet" class="btn btn-success" @click="onMine">
             Mine
           </button>
@@ -140,15 +140,15 @@
               </div>
               <div v-if="view === 'chain'" class="collapse" :class="{show: showElement === index}">
                 <div class="card-body">
-                  <p>Previous Hash: {{ data.previous_hash }}</p>
+                  <p>Previous Job Status | Hash: {{ data.previous_hash.substring(0, 16) + ' ...' }}</p>
                   <div class="list-group">
                     <div
                       v-for="tx in data.transactions"
                       class="list-group-item flex-column align-items-start"
                     >
                       <div>Commit Sender: {{ tx.sender }}</div>
-                      <div>Commit PM Recipient: {{ tx.recipient }}</div>
-                      <div>Commit Amount: {{ tx.amount }} $ECO (sec or cal/ATP)</div>
+                      <div>Commit Recipient: {{ tx.recipient.substring(0, 16) + ' ...' }}</div>
+                      <div>Commit Sum: {{ tx.amount }} ai &#162;</div>
                     </div>
                   </div>
                 </div>
