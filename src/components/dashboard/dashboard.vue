@@ -7,7 +7,7 @@
         <div class="col">
           <ul class="nav nav-pills">
             <li class="nav-item">
-              <a class="nav-link active" href="/" title="Collaboration Economy">Collaboration</a>
+              <a class="nav-link active" href="/" title="Cooperation Economy">Cooperation</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/network" title="ECO Social Network">Network</a>
@@ -45,7 +45,7 @@
       <hr />
       <div v-if="!wallet" class="row">
         <div class="col">
-          <div class="alert alert-warning">Create a Cell Wallet to start Collaboration and Progress!</div>
+          <div class="alert alert-warning">Create a Cell Wallet to start Cooperation and Progress!</div>
         </div>
       </div>
       <div v-if="wallet" class="row">
