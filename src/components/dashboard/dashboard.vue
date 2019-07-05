@@ -84,7 +84,7 @@
               :disabled="txLoading || outgoingTx.recipient.trim() === '' || outgoingTx.amount <= 0"
               type="submit"
               class="btn btn-primary"
-            >Send</button>
+            >Contribute</button>
           </form>
         </div>
       </div>
@@ -146,7 +146,6 @@
                   <div class="list-group">
                     <div
                       v-for="tx in data.transactions"
-                      v-bind:key="tx"
                       class="list-group-item flex-column align-items-start"
                     >
                       <div>Commit Sender: {{ tx.sender }}</div>
