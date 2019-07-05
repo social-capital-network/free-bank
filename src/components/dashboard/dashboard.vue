@@ -208,6 +208,11 @@ export default {
   created() {
     this.$store.dispatch('fetchUser')
   },
+  beforeMount() {
+    var vm = this
+    console.log('beforeMount()')
+    vm.onLoadWallet()
+  },
   computed: {
     email() {
       return !this.$store.getters.user ? false : this.$store.getters.user.email;
