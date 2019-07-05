@@ -130,7 +130,7 @@
             <div></div>
           </div>
           <div v-if="!dataLoading" class="accordion">
-            <div class="card" v-for="(data, index) in loadedData">
+            <div class="card" v-for="(data, index) in loadedData" v-bind:key="index">
               <div v-if="view === 'chain'" class="card-header">
                 <h5 class="mb-0">
                   <button
@@ -146,6 +146,7 @@
                   <div class="list-group">
                     <div
                       v-for="tx in data.transactions"
+                      v-bind:key="tx"
                       class="list-group-item flex-column align-items-start"
                     >
                       <div>Commit Sender: {{ tx.sender }}</div>
@@ -356,7 +357,7 @@ export default {
             vm.openTransactions = response.data
             vm.dataLoading = false
           })
-          .catch (function (error) {
+          .catch(function (error) {
             vm.dataLoading = false
             vm.error = 'Something went wrong.'
           })

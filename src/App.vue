@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <app-header />
+    <app-row v-for="row in 3" v-bind:key="row"></app-row>
     <router-view></router-view>
     <app-footer />
   </div>
@@ -8,11 +9,14 @@
 
 <script>
 import Header from './components/header/header.vue'
+import Row from './components/row/row.vue'
 import Footer from './components/footer/footer.vue'
+
 export default {
   name: 'app',
   components: {
     'app-header': Header,
+    'app-row': Row,
     'app-footer': Footer
   },
   created () {
