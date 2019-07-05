@@ -1,11 +1,13 @@
 <template>
   <div class="web">
-    <div class="row">Row: {{ status }}</div>
-    <button @click="changeStatus">Change</button>
+    <div class="column">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   data: function () {
     return {
@@ -21,7 +23,9 @@ export default {
 </script>
 
 <style scoped>
-.row {
-  flex-flow: row;
+.column {
+  display: flex;
+  flex-flow: column;
+  margin: 0px;
 }
 </style>
