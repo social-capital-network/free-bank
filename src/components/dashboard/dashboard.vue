@@ -212,7 +212,7 @@ export default {
   },
   beforeMount () {
     var vm = this
-    console.log('beforeMount()')
+    // console.log('beforeMount()')
     vm.onLoadWallet()
   },
   computed: {
