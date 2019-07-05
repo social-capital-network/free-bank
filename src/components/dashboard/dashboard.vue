@@ -6,6 +6,7 @@
       <div class="row">
         <div class="col">
           <ul class="nav nav-pills">
+            <li>cell #1 </li>
             <li class="nav-item">
               <a class="nav-link active" href="/" title="Cooperation Economy">Cooperation</a>
             </li>
@@ -27,6 +28,7 @@
               title="Create new Project Wallet"
             >Jobs</button>
              <button class="btn btn-primary" title="Knowledge Wallet">Skills</button>
+             <button class="btn btn-primary" title="Cells Wallet">Cells</button>
              <button class="btn btn-primary" @click="onLoadWallet" title="Investor Wallet">Bank</button>
           </div>
 

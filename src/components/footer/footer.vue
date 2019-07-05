@@ -3,7 +3,7 @@
     <nav>
       <ul>
         <li>
-          <a href="https://github.com/ai-economy/ai-eco-wallet">dev ai cell</a>
+          <a href="https://github.com/ai-economy/ai-eco-wallet">dev ai cells</a>
         </li>
         <li>
           MIT © Ianta Labs
