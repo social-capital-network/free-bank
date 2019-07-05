@@ -13,11 +13,14 @@
 </template>
 
 <style scoped>
-  .cell {
-    background-color: #ccc;
-    border: 0px solid #fff;
-    margin: 0px;
-  }
+.cell {
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+  background-color: #ccc;
+  border: 0px solid #fff;
+  margin: 0px;
+}
 
   .outer {
   overflow: hidden;

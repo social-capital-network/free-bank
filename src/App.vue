@@ -3,12 +3,12 @@
     <app-header />
     <div class="brain">
       <app-left-brain >
-        <app-column v-for="cols in 12" v-bind:key="cols">
+        <app-column v-for="cols in 48" v-bind:key="cols">
           <app-cell v-for="cells in 3" v-bind:key="cells"></app-cell>
         </app-column>
       </app-left-brain>
       <app-right-brain >
-        <app-column v-for="cols in 12" v-bind:key="cols">
+        <app-column v-for="cols in 48" v-bind:key="cols">
           <app-cell v-for="cells in 3" v-bind:key="cells"></app-cell>
         </app-column>
       </app-right-brain>
@@ -58,6 +58,7 @@ export default {
   .brain {
     display: flex;
     flex-flow: row;
+    overflow: hidden;
     justify-content: center;
   }
 </style>
