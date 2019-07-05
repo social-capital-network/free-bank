@@ -25,7 +25,7 @@ const routes = [
       }
     }
   },
-  { path: '*', redirect: '/'}
+  { path: '*', redirect: '/' }
 ]
 
 export default new VueRouter({ mode: 'history', routes })

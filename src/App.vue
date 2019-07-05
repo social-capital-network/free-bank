@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style>
-  body, html {  
+  body, html {
     position: relative;
     min-height: 100vh;
     margin-bottom: 56px;
@@ -31,6 +31,6 @@ export default {
   }
 
   #app {
-    padding-bottom: 84px; 
+    padding-bottom: 84px;
   }
 </style>
