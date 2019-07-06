@@ -1,7 +1,7 @@
 <template>
   <div id="dashboard">
-    <h1>web time coins</h1>
-    <p v-if="email">cell email: {{ email }}</p>
+    <h2>realtime web wallet</h2>
+    <p v-if="email">org: {{ email }}</p>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -374,7 +374,11 @@ export default {
 </script>
 
 <style scoped>
-h1,
+h2 {
+  text-align: center;
+  margin: 1rem auto;
+}
+
 p {
   text-align: center;
 }
