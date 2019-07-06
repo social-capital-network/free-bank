@@ -1,13 +1,13 @@
-# ai cell wallet
+# web cell wallet
 
 Next gen blockchain wallet for the ai economy currencies
 
-## Project setup
+## web wallet setup
 ```
 npm install
 ```
 
-### Compiles and reloads for dev
+### Compiles & reloads for live dev
 ```
 npm run serve
 ```
