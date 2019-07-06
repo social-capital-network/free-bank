@@ -69,11 +69,12 @@ export default {
     height: 100%;
     display: flex;
     flex-flow: row;
+    justify-content: right;
     align-items: center;
   }
 
   li {
-    margin: auto;
+    margin-left: 1rem;
   }
 
   li a {
