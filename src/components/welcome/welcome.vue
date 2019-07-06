@@ -1,14 +1,14 @@
 <template>
   <div id="welcome">
-    <h2>realtime Bitcoins</h2>
+    <h2>realtime bit &#162;oins</h2>
     <p>for fast & fair social progress</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
     </div>
     <p>bank on your live social capital</p>
-    <div id="wallet">realtime balance: {{ balance }} r₿</div>
-    <div id="rate">realtime spend/save rate: {{ rate }} r₿/s</div>
+    <div id="wallet">realtime hour balance: {{ balance }} r&#162;</div>
+    <div id="rate">realtime spend/save rate: {{ rate }} r&#162;/s</div>
     <h2>
       <span id="time" v-html="time"></span>
     </h2>

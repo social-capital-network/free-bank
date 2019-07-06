@@ -10,9 +10,7 @@
               <a class="nav-link" href="/cell" title="Cloud Brain">#1 Left</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/" title="Cooperation Economy"
-                >Community</a
-              >
+              <a class="nav-link active" href="/" title="Cooperation Economy">Community</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/network" title="Social Network">Web</a>
@@ -21,12 +19,8 @@
         </div>
       </div>
       <hr />
-      <div v-if="error" class="alert alert-danger" role="alert">
-        {{ error }}
-      </div>
-      <div v-if="success" class="alert alert-success" role="alert">
-        {{ success }}
-      </div>
+      <div v-if="error" class="alert alert-danger" role="alert">{{ error }}</div>
+      <div v-if="success" class="alert alert-success" role="alert">{{ success }}</div>
       <div class="row">
         <div class="col">
           <div v-if="!walletLoading">
@@ -34,20 +28,10 @@
               class="btn btn-primary"
               @click="onCreateWallet"
               title="Create new Project Wallet"
-            >
-              Jobs
-            </button>
-            <button class="btn btn-primary" title="Knowledge Wallet">
-              Skills
-            </button>
+            >Jobs</button>
+            <button class="btn btn-primary" title="Knowledge Wallet">Skills</button>
             <button class="btn btn-primary" title="Cells Wallet">Cells</button>
-            <button
-              class="btn btn-primary"
-              @click="onLoadWallet"
-              title="Investor Wallet"
-            >
-              Bank
-            </button>
+            <button class="btn btn-primary" @click="onLoadWallet" title="Investor Wallet">Bank</button>
           </div>
 
           <div v-if="walletLoading" class="lds-ring">
@@ -59,14 +43,12 @@
         </div>
       </div>
       <div class="col text-right">
-        <h4>live funds: {{ funds.toFixed(0) }} &#162;</h4>
+        <h4>live funds: {{ funds.toFixed(0) }} r&#162;</h4>
       </div>
       <hr />
       <div v-if="!wallet" class="row">
         <div class="col">
-          <div class="alert alert-warning">
-            Create a Cell Wallet to start Cooperation and Progress!
-          </div>
+          <div class="alert alert-warning">Create a Cell Wallet to start Cooperation and Progress!</div>
         </div>
       </div>
       <div v-if="wallet" class="row">
@@ -91,9 +73,7 @@
                 class="form-control"
                 id="amount"
               />
-              <small class="form-text text-muted"
-                >no fractions for vote coins</small
-              >
+              <small class="form-text text-muted">no fractions for vote coins</small>
             </div>
             <div v-if="txLoading" class="lds-ring">
               <div></div>
@@ -105,9 +85,7 @@
               :disabled="txLoading || outgoingTx.amount < 1"
               type="submit"
               class="btn btn-warning"
-            >
-              Vote
-            </button>
+            >Vote</button>
             <button
               :disabled="
                 txLoading ||
@@ -116,9 +94,7 @@
               "
               type="submit"
               class="btn btn-primary"
-            >
-              Contribute
-            </button>
+            >Contribute</button>
           </form>
         </div>
       </div>
@@ -132,8 +108,7 @@
                 :class="{ active: view === 'chain' }"
                 href="#"
                 @click="view = 'chain'"
-                >Job Blockchain</a
-              >
+              >Job Blockchain</a>
             </li>
             <li class="nav-item">
               <a
@@ -141,25 +116,18 @@
                 :class="{ active: view === 'tx' }"
                 href="#"
                 @click="view = 'tx'"
-              >
-                Open Deals
-              </a>
+              >Open Deals</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="row my-3">
         <div class="col">
-          <button class="btn btn-primary" @click="onLoadData">
-            {{ view === 'chain' ? 'Cooperate' : 'Commits' }}
-          </button>
           <button
-            v-if="view === 'chain' && wallet"
-            class="btn btn-success"
-            @click="onMine"
-          >
-            Mine
-          </button>
+            class="btn btn-primary"
+            @click="onLoadData"
+          >{{ view === 'chain' ? 'Cooperate' : 'Commits' }}</button>
+          <button v-if="view === 'chain' && wallet" class="btn btn-success" @click="onMine">Mine</button>
           <button class="btn btn-warning" @click="onResolve">Compete</button>
         </div>
       </div>
@@ -172,11 +140,7 @@
             <div></div>
           </div>
           <div v-if="!dataLoading" class="accordion">
-            <div
-              class="card"
-              v-for="(data, index) in loadedData"
-              v-bind:key="index"
-            >
+            <div class="card" v-for="(data, index) in loadedData" v-bind:key="index">
               <div v-if="view === 'chain'" class="card-header">
                 <h5 class="mb-0">
                   <button
@@ -187,9 +151,7 @@
                         ? (showElement = null)
                         : (showElement = index)
                     "
-                  >
-                    contribution block #{{ data.index }}
-                  </button>
+                  >contribution block #{{ data.index }}</button>
                 </h5>
               </div>
               <div
@@ -212,7 +174,7 @@
                         Commit Recipient:
                         {{ tx.recipient.substring(0, 16) + ' ...' }}
                       </div>
-                      <div>Commit Sum: {{ tx.amount }} ai &#162;</div>
+                      <div>Commit Sum: {{ tx.amount }} r&#162;</div>
                     </div>
                   </div>
                 </div>
@@ -228,24 +190,16 @@
                         ? (showElement = null)
                         : (showElement = index)
                     "
-                  >
-                    Transaction | Commit #{{ index }}
-                  </button>
+                  >Transaction | Commit #{{ index }}</button>
                 </h5>
               </div>
-              <div
-                v-if="view === 'tx'"
-                class="collapse"
-                :class="{ show: showElement === index }"
-              >
+              <div v-if="view === 'tx'" class="collapse" :class="{ show: showElement === index }">
                 <div class="card-body">
                   <div class="list-group">
                     <div class="list-group-item flex-column align-items-start">
                       <div>Commit Sender: {{ data.sender }}</div>
                       <div>Commit Recipient: {{ data.recipient }}</div>
-                      <div>
-                        Commit Amount: {{ data.amount }} $ECO (sec or cal/ATP)
-                      </div>
+                      <div>Commit Amount: {{ data.amount }} r&#162;</div>
                     </div>
                   </div>
                 </div>
