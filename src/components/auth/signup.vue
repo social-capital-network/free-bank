@@ -1,5 +1,6 @@
 <template>
   <div id="signup">
+    <h2>Join the live web</h2>
     <div class="signup-form">
       <form @submit.prevent="onSubmit">
         <div class="input" :class="{invalid: $v.email.$error}">
@@ -40,12 +41,12 @@
         <div class="input">
           <label for="country">Country</label>
           <select id="country" v-model="country">
+            <option value="eukarya">Tester's Eukarya Superkingdom</option>
             <option value="usa">USA</option>
             <option value="china">China</option>
             <option value="india">India</option>
             <option value="canada">Canada</option>
             <option value="uk">United Kindom</option>
-            <option value="eukarya">Eukarya Super Kingdom</option>
           </select>
         </div>
         <div class="interests">
@@ -66,8 +67,8 @@
                       v-model="interestInput.value" />
               <button @click="onDeleteInterest(interestInput.id)" type="button">X</button>
             </div>
-            <p v-if="$v.interestInputs.minLen - 1">You have to specify at least {{ $v.interestInputs.$params.minLen.min }} interests</p>
-            <p v-if="!$v.interestInputs.required">Add your interests in ai society.</p>
+            <p v-if="$v.interestInputs.minLen - 1">At least {{ $v.interestInputs.$params.minLen.min }} interests</p>
+            <p v-if="!$v.interestInputs.required">Your interests in realtime economy.</p>
           </div>
         </div>
         <div class="input inline" :class="{invalid: $v.terms.$invalid}">
@@ -97,7 +98,7 @@ export default {
       age: null,
       password: '',
       confirmPassword: '',
-      country: 'usa',
+      country: 'eukarya',
       interestInputs: [],
       terms: false
     }
@@ -174,11 +175,22 @@ export default {
 </script>
 
 <style scoped>
+#signup {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin: 1rem auto;
+}
+
 .signup-form {
   width: 300px;
-  margin: 30px auto;
+  margin: 0px auto;
   border: 1px solid #eee;
-  padding: 20px;
+  padding: 0px 20px;
   box-shadow: 0 2px 3px #ccc;
 }
 
@@ -250,6 +262,7 @@ export default {
   border: 1px solid #6aa84f;
   color: #6aa84f;
   padding: 10px 20px;
+  margin: 10px 0px 20px;
   font: inherit;
   cursor: pointer;
 }
