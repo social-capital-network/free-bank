@@ -3,10 +3,10 @@
     <nav>
       <ul>
         <li>
-          <a href="https://github.com/ai-economy/ai-eco-wallet">get web cells</a>
+          <a href="https://github.com/ai-economy/ai-eco-wallet">dev realtime jobs</a>
         </li>
         <li>
-          MIT © Ianta Labs
+          <p>MIT © Ianta Labs</p>
         </li>
       </ul>
     </nav>
@@ -21,7 +21,7 @@
     width: 100%;
     display: flex;
     flex-flow: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background-color: #6aa84f;
     padding: 0 20px;
@@ -39,6 +39,7 @@
 
   nav {
     height: 100%;
+    width: 100%;
   }
 
   ul {
@@ -48,11 +49,12 @@
     height: 100%;
     display: flex;
     flex-flow: row;
+    justify-content: space-between;
     align-items: center;
   }
 
-  li {
-    margin-right: 20px;
+  li p {
+    margin: 0px auto;
   }
 
   li a {
