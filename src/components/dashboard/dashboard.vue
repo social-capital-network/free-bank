@@ -1,6 +1,6 @@
 <template>
   <div id="dashboard">
-    <h2>realtime web wallet</h2>
+    <h2>my realtime wallet</h2>
     <p v-if="email">org: {{ email }}</p>
     <div class="container">
       <div class="row">
