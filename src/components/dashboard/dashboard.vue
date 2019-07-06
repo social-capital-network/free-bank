@@ -1,17 +1,19 @@
 <template>
   <div id="dashboard">
-    <h1>social ai coins</h1>
+    <h1>web time coins</h1>
     <p v-if="email">cell email: {{ email }}</p>
     <div class="container">
       <div class="row">
         <div class="col">
           <ul class="nav nav-pills">
-            <li>cell #1 </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/" title="Cooperation Economy">Cooperation</a>
+            <li>
+              <a class="nav-link" href="/cell" title="Cloud Brain">#1 Left</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/network" title="ECO Social Network">Network</a>
+              <a class="nav-link active" href="/" title="Cooperation Economy">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/network" title="Social Network">Web</a>
             </li>
           </ul>
         </div>
@@ -42,7 +44,7 @@
 
       </div>
         <div class="col text-right">
-          <h4>live: {{ funds.toFixed(0) }} ai &#162;</h4>
+          <h4>live funds: {{ funds.toFixed(0) }} &#162;</h4>
         </div>
       <hr />
       <div v-if="!wallet" class="row">
@@ -64,7 +66,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="amount">ai Amount or Skill id</label>
+              <label for="amount">Amount or Skill id</label>
               <input
                 v-model.number="outgoingTx.amount"
                 type="number"
@@ -72,7 +74,7 @@
                 class="form-control"
                 id="amount"
               />
-              <small class="form-text text-muted">no fractions for ai coins</small>
+              <small class="form-text text-muted">no fractions for vote coins</small>
             </div>
             <div v-if="txLoading" class="lds-ring">
               <div></div>
@@ -81,7 +83,12 @@
               <div></div>
             </div>
             <button
-              :disabled="txLoading || outgoingTx.recipient.trim() === '' || outgoingTx.amount <= 0"
+              :disabled="txLoading || outgoingTx.amount < 1"
+              type="submit"
+              class="btn btn-warning"
+            >Vote</button>
+            <button
+              :disabled="txLoading || outgoingTx.recipient.trim() === '' || outgoingTx.amount > 1"
               type="submit"
               class="btn btn-primary"
             >Contribute</button>
@@ -203,7 +210,7 @@ export default {
       funds: 0,
       outgoingTx: {
         recipient: '',
-        amount: 0
+        amount: 1
       }
     }
   },
@@ -264,7 +271,7 @@ export default {
         .then(function (response) {
           vm.error = null
           vm.success =
-            'ai cell Public Key: ' +
+            'cell Public Key: ' +
             response.data.public_key.substring(0, 20) + ' ...'
             // ', Private Key: ' +
             // response.data.private_key
