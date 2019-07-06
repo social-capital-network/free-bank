@@ -1,4 +1,4 @@
-# Web cell wallet
+# Realtime web wallet
 
 Next gen blockchain wallet for the ai economy currencies
 
