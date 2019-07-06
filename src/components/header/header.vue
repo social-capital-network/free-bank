@@ -91,7 +91,8 @@ export default {
   .logout {
     background-color: transparent;
     border: none;
-    margin-left: 1rem;
+    margin: 0px;
+    padding: 0px;
     font: inherit;
     color: white;
     cursor: pointer;
