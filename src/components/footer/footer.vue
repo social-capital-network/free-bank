@@ -3,9 +3,7 @@
     <nav>
       <ul>
         <li>
-          <a href="https://github.com/ai-economy/ai-eco-wallet"
-            >dev realtime jobs</a
-          >
+          <a href="https://github.com/ai-economy/ai-eco-wallet">git realtime &#162;oins</a>
         </li>
         <li>
           <p>MIT © Ianta Labs</p>

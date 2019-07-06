@@ -8,7 +8,7 @@
     </div>
     <p>bank on your live social capital</p>
     <div id="wallet">realtime hour balance: {{ balance }} r&#162;</div>
-    <div id="rate">realtime spend/save rate: {{ rate }} r&#162;/s</div>
+    <div id="rate">realtime spend/save rate: -{{ rate }} r&#162;/s</div>
     <h2>
       <span id="time" v-html="time"></span>
     </h2>
