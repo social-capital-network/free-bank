@@ -73,7 +73,7 @@ export default {
   }
 
   li {
-    margin: 0 12px;
+    margin: auto;
   }
 
   li a {
@@ -90,6 +90,7 @@ export default {
   .logout {
     background-color: transparent;
     border: none;
+    margin-left: 1rem;
     font: inherit;
     color: white;
     cursor: pointer;
