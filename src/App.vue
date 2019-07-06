@@ -2,12 +2,12 @@
   <div id="app">
     <app-header />
     <div class="brain">
-      <app-left-brain >
+      <app-left-brain>
         <app-column v-for="cols in 48" v-bind:key="cols">
           <app-cell v-for="cells in 3" v-bind:key="cells"></app-cell>
         </app-column>
       </app-left-brain>
-      <app-right-brain >
+      <app-right-brain>
         <app-column v-for="cols in 48" v-bind:key="cols">
           <app-cell v-for="cells in 3" v-bind:key="cells"></app-cell>
         </app-column>
@@ -36,29 +36,30 @@ export default {
     'app-cell': Cell,
     'app-footer': Footer
   },
-  created () {
+  created() {
     this.$store.dispatch('tryAutoLogin')
   }
 }
 </script>
 
 <style>
-  body, html {
-    position: relative;
-    min-height: 100vh;
-    margin-bottom: 56px;
-    margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+body,
+html {
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: 56px;
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
-  #app {
-    padding-bottom: 84px;
-  }
+#app {
+  padding-bottom: 84px;
+}
 
-  .brain {
-    display: flex;
-    flex-flow: row;
-    overflow: hidden;
-    justify-content: center;
-  }
+.brain {
+  display: flex;
+  flex-flow: row;
+  overflow: hidden;
+  justify-content: center;
+}
 </style>

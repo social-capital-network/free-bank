@@ -3,40 +3,46 @@
     <h2>Join the live web</h2>
     <div class="signup-form">
       <form @submit.prevent="onSubmit">
-        <div class="input" :class="{invalid: $v.email.$error}">
+        <div class="input" :class="{ invalid: $v.email.$error }">
           <label for="email">Email</label>
           <input
-                  type="email"
-                  id="email"
-                  @blur="$v.email.$touch()"
-                  v-model="email" />
+            type="email"
+            id="email"
+            @blur="$v.email.$touch()"
+            v-model="email"
+          />
           <p v-if="!$v.email.email">valid email address required.</p>
           <p v-if="!$v.email.required">required</p>
         </div>
-        <div class="input" :class="{invalid: $v.age.$error}">
+        <div class="input" :class="{ invalid: $v.age.$error }">
           <label for="age">Your Age</label>
           <input
-                  type="number"
-                  id="age"
-                  @blur="$v.age.$touch()"
-                  v-model.number="age" />
-          <p v-if="!$v.age.minVal">Min {{ $v.age.$params.minVal.min }} y.o. 18 for ai patenting.</p>
+            type="number"
+            id="age"
+            @blur="$v.age.$touch()"
+            v-model.number="age"
+          />
+          <p v-if="!$v.age.minVal">
+            Min {{ $v.age.$params.minVal.min }} y.o. 18 for ai patenting.
+          </p>
         </div>
-        <div class="input" :class="{invalid: $v.password.$error}">
+        <div class="input" :class="{ invalid: $v.password.$error }">
           <label for="password">Password</label>
           <input
-                  type="password"
-                  id="password"
-                  @blur="$v.password.$touch()"
-                  v-model="password" />
+            type="password"
+            id="password"
+            @blur="$v.password.$touch()"
+            v-model="password"
+          />
         </div>
-        <div class="input" :class="{invalid: $v.confirmPassword.$error}">
+        <div class="input" :class="{ invalid: $v.confirmPassword.$error }">
           <label for="confirm-password">Confirm Password</label>
           <input
-                  type="password"
-                  id="confirm-password"
-                  @blur="$v.confirmPassword.$touch()"
-                  v-model="confirmPassword" />
+            type="password"
+            id="confirm-password"
+            @blur="$v.confirmPassword.$touch()"
+            v-model="confirmPassword"
+          />
         </div>
         <div class="input">
           <label for="country">Country</label>
@@ -54,30 +60,38 @@
           <button @click="onAddInterest" type="button">Add Interest</button>
           <div class="interest-list">
             <div
-                    class="input"
-                    v-for="(interestInput, index) in interestInputs"
-                    :class="{invalid: $v.interestInputs.$each[index].$error}"
-                    :key="interestInput.id"
+              class="input"
+              v-for="(interestInput, index) in interestInputs"
+              :class="{ invalid: $v.interestInputs.$each[index].$error }"
+              :key="interestInput.id"
             >
               <label :for="interestInput.id">Interest #{{ index + 1 }}</label>
               <input
-                      type="text"
-                      :id="interestInput.id"
-                      @blur="$v.interestInputs.$each[index].value.$touch()"
-                      v-model="interestInput.value" />
-              <button @click="onDeleteInterest(interestInput.id)" type="button">X</button>
+                type="text"
+                :id="interestInput.id"
+                @blur="$v.interestInputs.$each[index].value.$touch()"
+                v-model="interestInput.value"
+              />
+              <button @click="onDeleteInterest(interestInput.id)" type="button">
+                X
+              </button>
             </div>
-            <p v-if="$v.interestInputs.minLen - 1">At least {{ $v.interestInputs.$params.minLen.min }} interests</p>
-            <p v-if="!$v.interestInputs.required">Your interests in realtime economy.</p>
+            <p v-if="$v.interestInputs.minLen - 1">
+              At least {{ $v.interestInputs.$params.minLen.min }} interests
+            </p>
+            <p v-if="!$v.interestInputs.required">
+              Your interests in realtime economy.
+            </p>
           </div>
         </div>
-        <div class="input inline" :class="{invalid: $v.terms.$invalid}">
+        <div class="input inline" :class="{ invalid: $v.terms.$invalid }">
           <input
-                  type="checkbox"
-                  id="terms"
-                  @change="$v.terms.$touch()"
-                  v-model="terms" />
-          <label for="terms"> Accept Terms of Use</label>
+            type="checkbox"
+            id="terms"
+            @change="$v.terms.$touch()"
+            v-model="terms"
+          />
+          <label for="terms">Accept Terms of Use</label>
         </div>
         <div class="submit">
           <button type="submit" :disabled="$v.$invalid">Sign Up</button>
@@ -88,11 +102,18 @@
 </template>
 
 <script>
-import { required, email, numeric, minValue, minLength, sameAs } from 'vuelidate/lib/validators'
+import {
+  required,
+  email,
+  numeric,
+  minValue,
+  minLength,
+  sameAs
+} from 'vuelidate/lib/validators'
 import axios from 'axios'
 
 export default {
-  data () {
+  data() {
     return {
       email: '',
       age: null,
@@ -109,7 +130,8 @@ export default {
       email,
       unique: val => {
         if (val === '') return true
-        return axios.get('/users.json?orderBy="email"&equalTo="' + val + '"')
+        return axios
+          .get('/users.json?orderBy="email"&equalTo="' + val + '"')
           .then(res => {
             return Object.keys(res.data).length === 0
           })
@@ -131,7 +153,7 @@ export default {
       })
     },
     terms: {
-      checked: (value, vm) => vm.country === 'eukarya' ? true : value
+      checked: (value, vm) => (vm.country === 'eukarya' ? true : value)
     },
     interestInputs: {
       required,
@@ -145,19 +167,19 @@ export default {
     }
   },
   methods: {
-    onAddInterest () {
+    onAddInterest() {
       const newInterest = {
         id: Math.random() * Math.random() * 1000,
         value: ''
       }
       this.interestInputs.push(newInterest)
     },
-    onDeleteInterest (id) {
+    onDeleteInterest(id) {
       this.interestInputs = this.interestInputs.filter(
         interest => interest.id !== id
       )
     },
-    onSubmit () {
+    onSubmit() {
       const formData = {
         email: this.email,
         age: this.age,

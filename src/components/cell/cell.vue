@@ -22,7 +22,7 @@
   margin: 0px;
 }
 
-  .outer {
+.outer {
   overflow: hidden;
 }
 .inner {

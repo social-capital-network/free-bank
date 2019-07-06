@@ -25,12 +25,12 @@
 <script>
 export default {
   computed: {
-    auth () {
+    auth() {
       return this.$store.getters.isAuthenticated
     }
   },
   methods: {
-    onLogout () {
+    onLogout() {
       this.$store.dispatch('logout')
     }
   }
@@ -38,63 +38,63 @@ export default {
 </script>
 
 <style scoped>
-  #header {
-    height: 56px;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #6aa84f;
-    padding: 0 20px;
-  }
+#header {
+  height: 56px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6aa84f;
+  padding: 0 20px;
+}
 
-  .logo {
-    font-weight: bold;
-    color: white;
-  }
+.logo {
+  font-weight: bold;
+  color: white;
+}
 
-  .logo a {
-    text-decoration: none;
-    color: white;
-  }
+.logo a {
+  text-decoration: none;
+  color: white;
+}
 
-  nav {
-    height: 100%;
-  }
+nav {
+  height: 100%;
+}
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-flow: row;
-    justify-content: right;
-    align-items: center;
-  }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: right;
+  align-items: center;
+}
 
-  li {
-    margin-left: 1rem;
-  }
+li {
+  margin-left: 1rem;
+}
 
-  li a {
-    text-decoration: none;
-    color: white;
-  }
+li a {
+  text-decoration: none;
+  color: white;
+}
 
-  li a:hover,
-  li a:active,
-  li a.router-link-active {
-    color: #333;
-  }
+li a:hover,
+li a:active,
+li a.router-link-active {
+  color: #333;
+}
 
-  .logout {
-    background-color: transparent;
-    border: none;
-    margin: 0px;
-    padding: 0px;
-    font: inherit;
-    color: white;
-    cursor: pointer;
-  }
+.logout {
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+}
 </style>

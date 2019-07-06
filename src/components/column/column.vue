@@ -7,15 +7,14 @@
 </template>
 
 <script>
-
 export default {
-  data: function () {
+  data: function() {
     return {
       status: 'Critical'
     }
   },
   methods: {
-    changeStatus () {
+    changeStatus() {
       this.status = 'Normal'
     }
   }
