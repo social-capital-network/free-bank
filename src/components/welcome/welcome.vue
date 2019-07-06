@@ -7,9 +7,9 @@
       <router-link to="/signin">Sign In</router-link>
     </div>
     <p>bank on your live social capital</p>
-    <h2>live ai trading</h2>
-    <h2>on realtime</h2>
-    <h2>skills demand</h2>
+    <h2>live jobs demand</h2>
+    <h2>matching</h2>
+    <h2>realtime skills offer</h2>
   </div>
 </template>
 
