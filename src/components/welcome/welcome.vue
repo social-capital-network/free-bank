@@ -9,7 +9,9 @@
     <p>bank on your live social capital</p>
     <div id="wallet">realtime balance: {{ balance }} r₿</div>
     <div id="rate">realtime spend/save rate: {{ rate }} r₿/s</div>
-    <span id="time" v-html="time"></span>
+    <h2>
+      <span id="time" v-html="time"></span>
+    </h2>
     <h2>live jobs demand</h2>
     <h2>matching</h2>
     <h2>realtime skills offer</h2>
