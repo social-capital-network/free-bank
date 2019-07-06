@@ -1,15 +1,15 @@
 <template>
   <div id="welcome">
-    <h1>coin skills</h1>
-    <p>for faster social progress</p>
+    <h2>my realtime wallet</h2>
+    <p>fast & fair social progress</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
     </div>
     <p>bank on your live social capital</p>
-    <h1>live ai trading</h1>
-    <h1>on realtime</h1>
-    <h1>skills demand</h1>
+    <h2>live ai trading</h2>
+    <h2>on realtime</h2>
+    <h2>skills demand</h2>
   </div>
 </template>
 
@@ -19,11 +19,11 @@
   }
 
   #welcome {
-    width: 80%;
+    width: 100%;
     margin: auto;
   }
 
-  h1 {
+  h2 {
     text-align: center;
     margin-top: 12px;
   }
