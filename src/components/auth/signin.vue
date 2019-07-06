@@ -1,5 +1,6 @@
 <template>
   <div id="signin">
+    <h2>my realtime wallet</h2>
     <div class="signin-form">
       <form @submit.prevent="onSubmit">
         <div class="input">
@@ -40,11 +41,22 @@ export default {
 </script>
 
 <style scoped>
+#signin {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin: 1rem auto;
+}
+
 .signin-form {
   width: 300px;
-  margin: 30px auto;
+  margin: 0px auto;
   border: 1px solid #eee;
-  padding: 20px;
+  padding: 0px 20px;
   box-shadow: 0 2px 3px #ccc;
 }
 
@@ -76,6 +88,7 @@ export default {
   border: 1px solid #6aa84f;
   color: #6aa84f;
   padding: 10px 20px;
+  margin: 10px 0px 20px;
   font: inherit;
   cursor: pointer;
 }
