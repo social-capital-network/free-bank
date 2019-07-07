@@ -1,20 +1,22 @@
 <template>
   <div id="welcome">
-    <h2>realtime bit &#162;oins</h2>
+    <h1>realtime &#162;oins</h1>
     <p>for fast & fair social progress</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
     </div>
     <p>bank on your live social capital</p>
-    <div id="wallet">realtime hour balance: {{ balance }} r&#162;</div>
-    <div id="rate">realtime spend/save rate: -{{ rate }} r&#162;/s</div>
-    <h2>
-      <span id="time" v-html="time"></span>
-    </h2>
-    <h2>live jobs demand</h2>
-    <h2>matching</h2>
-    <h2>realtime skills offer</h2>
+    <h2>realtime balance:</h2>
+    <h1>
+      <div id="wallet">{{ hourBalance }} r&#162;</div>
+    </h1>
+    <h2>realtime growth:</h2>
+    <h1>
+      <div id="rate">{{ hourRate }} r&#162;/s</div>
+    </h1>
+    <!-- <h2><span id="time" v-html="time"></span></h2> -->
+    <p>coin realtime skills to match realtime jobs</p>
   </div>
 </template>
 
@@ -22,8 +24,9 @@
 export default {
   data: function() {
     return {
-      balance: 3600,
-      rate: 1.0,
+      hourBalance: 3600,
+      timeCoin: 1,
+      hourRate: -1.0,
       state: 'started',
       startTime: Date.now(),
       currentTime: Date.now(),
@@ -74,6 +77,7 @@ export default {
     updateCurrentTime: function() {
       if (this.$data.state == 'started') {
         this.currentTime = Date.now()
+        this.hourBalance -= this.timeCoin
       }
     }
   }
@@ -90,6 +94,7 @@ div {
   margin: auto;
 }
 
+h1,
 h2 {
   text-align: center;
   margin-top: 12px;
@@ -101,6 +106,8 @@ p {
 
 #wallet,
 #rate {
+  color: #f1453d;
+  font-size: 2.8rem;
   text-align: center;
 }
 
