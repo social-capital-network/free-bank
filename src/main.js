@@ -2,11 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import Vuelidate from 'vuelidate'
+import Vue2Filters from 'vue2-filters'
 
 import router from './router'
 import store from './store'
 
 Vue.use(Vuelidate)
+Vue.use(Vue2Filters)
 
 axios.defaults.baseURL = 'https://ai-economy.firebaseio.com'
 // axios.defaults.headers.common['Authorization'] = 'public-leaders-investors-coders'

@@ -9,11 +9,11 @@
     <p>bank on your live social capital</p>
     <h2>realtime balance:</h2>
     <h1>
-      <div id="wallet">{{ hourBalance }} r&#162;</div>
+      <div id="wallet">{{ hourBalance | currency('r&#162; ', 0) }}</div>
     </h1>
     <h2>realtime growth:</h2>
     <h1>
-      <div id="rate">{{ hourRate }} r&#162;/s</div>
+      <div id="rate">{{ hourRate }} r&#162;/sec</div>
     </h1>
     <!-- <h2><span id="time" v-html="time"></span></h2> -->
     <p>coin realtime skills to match realtime jobs</p>
