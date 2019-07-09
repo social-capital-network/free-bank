@@ -1,18 +1,34 @@
 <template>
   <div id="app">
     <app-header />
-    <div class="brain">
-      <app-left-brain>
-        <app-column v-for="cols in 48" v-bind:key="cols">
-          <app-cell v-for="cells in 3" v-bind:key="cells"></app-cell>
+    <div class="brain" @mouseover.stop="changeSelected">
+      <app-left-brain class="left-brain" @mouseover.stop="changeSelected">
+        <app-column
+          class="columns"
+          v-for="cols in 16"
+          v-bind:key="cols"
+          @mouseover.stop="changeSelected"
+        >
+          <app-cell
+            v-on:mouseover="changeSelected"
+            v-for="cells in 3"
+            v-bind:key="cells"
+            :class="['s' + cols, { cooperate: left }, { compete: right }]"
+          ></app-cell>
         </app-column>
       </app-left-brain>
-      <app-right-brain>
-        <app-column v-for="cols in 48" v-bind:key="cols">
-          <app-cell v-for="cells in 3" v-bind:key="cells"></app-cell>
+      <app-right-brain class="right-brain">
+        <app-column v-for="cols in 16" v-bind:key="cols">
+          <app-cell
+            v-on:mouseover="changeSelected"
+            v-for="cells in 3"
+            v-bind:key="cells"
+            :class="['s' + cols, { cooperate: left }, { compete: right }]"
+          ></app-cell>
         </app-column>
       </app-right-brain>
     </div>
+    <p>{{ brain }} c:{{ col }} r:{{ row }}</p>
     <router-view></router-view>
     <app-footer />
   </div>
@@ -28,6 +44,53 @@ import Footer from './components/footer/footer.vue'
 
 export default {
   name: 'app',
+  data: function() {
+    return {
+      left: false,
+      right: false,
+      props: ['cols'],
+      brain: 'colab',
+      row: 0,
+      col: 0,
+      online: true,
+      deal: false,
+      hovered: [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      x: 0,
+      y: 0,
+      color: '#6aa84f',
+      colors: [
+        '#111',
+        '#222',
+        '#333',
+        '#444',
+        '#555',
+        '#666',
+        '#777',
+        '#888',
+        '#999'
+      ],
+      selected: false,
+      hoverColor: '#yellow',
+      status: 'Critical'
+    }
+  },
   components: {
     'app-header': Header,
     'app-left-brain': LeftBrain,
@@ -38,6 +101,43 @@ export default {
   },
   created() {
     this.$store.dispatch('tryAutoLogin')
+  },
+  methods: {
+    changeStatus() {
+      this.status = 'Normal'
+    },
+    changeSelected(event) {
+      this.x = event.clientX
+      this.y = event.clientY
+      this.selected = !this.selected
+      let dx = 12 * 16 - this.x
+      if (dx > 0) {
+        this.left = true
+        this.right = false
+      } else {
+        this.left = false
+        this.right = true
+      }
+      let dy = this.y - 56
+      let mdx = Math.ceil(dx / 12)
+      let mdy = Math.ceil(dy / 12)
+      if (mdx >= 0) {
+        this.deal = !this.deal
+        this.srv = mdx
+        this.hovered[mdx] = true
+      }
+      console.log(this.left, this.right, mdx, mdy, this.x, this.y)
+      for (let h = 0; h < 16; h++) {
+        if (h >= 0 && h < 16 && h != mdx) {
+          this.hovered[h] = false
+        }
+      }
+    },
+    hoverStyle() {
+      return {
+        backgroundColor: this.color
+      }
+    }
   }
 }
 </script>
@@ -61,5 +161,106 @@ html {
   flex-flow: row;
   overflow: hidden;
   justify-content: center;
+}
+
+.left-brain {
+  background-color: transparent;
+}
+
+.right-brain {
+  background-color: transparent;
+}
+
+.columns {
+  background-color: transparent;
+}
+
+.server {
+  background-color: transparent;
+}
+
+.cell {
+  background-color: rgba(88, 88, 88, 0.5);
+}
+
+.online {
+  background-color: green;
+}
+
+.r50 {
+  background-color: rgba(128, 0, 0, 0.5);
+}
+
+.g50 {
+  background-color: rgba(0, 128, 0, 0.5);
+}
+
+.b50 {
+  background-color: rgba(0, 0, 128, 0.5);
+}
+
+.cooperate {
+  background-color: rgba(100, 200, 100, 0.5);
+}
+
+.compete {
+  background-color: rgba(200, 100, 100, 0.5);
+}
+
+/* .outer {
+  background-color: rgba(200, 100, 100, 0.5);
+}
+
+.inner {
+  background-color: rgba(100, 200, 100, 0.5);
+} */
+
+.s0 {
+  background-color: green;
+}
+.s1 {
+  background-color: teal;
+}
+.s2 {
+  background-color: greenyellow;
+}
+.s3 {
+  background-color: beige;
+}
+.s4 {
+  background-color: rebeccapurple;
+}
+.s5 {
+  background-color: salmon;
+}
+.s6 {
+  background-color: navajowhite;
+}
+.s7 {
+  background-color: yellow;
+}
+.s8 {
+  background-color: cadetblue;
+}
+.s9 {
+  background-color: chocolate;
+}
+.s10 {
+  background-color: violet;
+}
+.s11 {
+  background-color: sienna;
+}
+.s12 {
+  background-color: skyblue;
+}
+.s13 {
+  background-color: brown;
+}
+.s14 {
+  background-color: darkgoldenrod;
+}
+.s15 {
+  background-color: darkolivegreen;
 }
 </style>
