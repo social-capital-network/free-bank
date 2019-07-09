@@ -114,13 +114,17 @@ export default {
       if (dx > 0) {
         this.left = true
         this.right = false
+        this.brain = 'colab'
       } else {
         this.left = false
         this.right = true
+        this.brain = 'compete'
       }
       let dy = this.y - 56
       let mdx = Math.ceil(dx / 12)
+      this.col = -mdx
       let mdy = Math.ceil(dy / 12)
+      this.row = mdy
       if (mdx >= 0) {
         this.deal = !this.deal
         this.srv = mdx
