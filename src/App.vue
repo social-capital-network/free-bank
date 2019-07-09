@@ -215,6 +215,10 @@ p {
   background-color: rgba(200, 100, 100, 0.5);
 }
 
+.interest {
+  border: 1px solid #ccc;
+}
+
 /* .outer {
   background-color: rgba(200, 100, 100, 0.5);
 }
