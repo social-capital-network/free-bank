@@ -156,6 +156,10 @@ html {
   padding-bottom: 84px;
 }
 
+p {
+  text-align: center;
+}
+
 .brain {
   display: flex;
   flex-flow: row;
