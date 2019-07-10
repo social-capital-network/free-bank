@@ -7,7 +7,7 @@
       <router-link to="/signin">Sign In</router-link>
     </div>
     <p>bank on your live social capital</p>
-    <h2>realtime balance:</h2>
+    <h2>realtime wallet:</h2>
     <h1>
       <div id="wallet">{{ hourBalance | currency('r&#162; ', 0) }}</div>
     </h1>
