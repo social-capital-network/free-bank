@@ -4,7 +4,7 @@
     <h1>w a l l e t</h1>
     <hr />
     <h1>realtime {{ coins }}</h1>
-    <p>&#162;oins for fast & fair social progress</p>
+    <p>coin ai skills to match high pay jobs</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
@@ -18,8 +18,8 @@
     <h1>
       <div id="rate">{{ hourRate }} r&#162;/sec</div>
     </h1>
+    <p>next generation ai banking protocol</p>
     <!-- <h2><span id="time" v-html="time"></span></h2> -->
-    <p>coin realtime skills to match realtime jobs</p>
   </div>
 </template>
 
