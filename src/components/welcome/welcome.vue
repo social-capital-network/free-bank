@@ -81,7 +81,11 @@ export default {
       if (this.$data.state == 'started') {
         this.currentTime = Date.now()
         this.hourBalance -= this.timeCoin
-        this.seconds % 8 <= 3 ? (this.coins = 'jobs') : (this.coins = 'skills')
+        this.seconds % 9 <= 2
+          ? (this.coins = 'jobs')
+          : this.seconds % 9 <= 5
+          ? (this.coins = 'coins')
+          : (this.coins = 'skills')
       }
     }
   }

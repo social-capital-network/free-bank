@@ -52,7 +52,7 @@ export default {
       brain: 'collaborate',
       row: 0,
       col: 0,
-      server: 'bank server',
+      server: 'dev server',
       online: true,
       deal: false,
       hovered: [
@@ -127,10 +127,10 @@ export default {
       let mdy = Math.ceil(dy / 12)
       this.row = mdy
       this.row === 2
-        ? (this.server = 'bank server')
+        ? (this.server = 'bank cortex')
         : this.row === 1
-        ? (this.server = 'jobs server')
-        : (this.server = 'skills server')
+        ? (this.server = 'jobs cortex')
+        : (this.server = 'skills cortex')
       if (mdx >= 0) {
         this.deal = !this.deal
         this.srv = mdx
