@@ -1,6 +1,8 @@
 <template>
   <div id="welcome">
-    <h1>i n n o v a t e</h1>
+    <h1>i n n o v a t i o n</h1>
+    <h1>w a l l e t</h1>
+    <hr />
     <h1>realtime {{ coins }}</h1>
     <p>&#162;oins for fast & fair social progress</p>
     <div class="cta">
