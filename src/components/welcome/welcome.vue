@@ -1,7 +1,8 @@
 <template>
   <div id="welcome">
-    <h1>realtime &#162;oins</h1>
-    <p>for fast & fair social progress</p>
+    <h1>i n n o v a t e</h1>
+    <h1>realtime {{ coins }}</h1>
+    <p>&#162;oins for fast & fair social progress</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
@@ -24,6 +25,7 @@
 export default {
   data: function() {
     return {
+      coins: 'jobs',
       hourBalance: 3600,
       timeCoin: 1,
       hourRate: -1.0,
@@ -59,7 +61,8 @@ export default {
     seconds: function() {
       var lapsed = this.milliseconds
       var sec = Math.ceil((lapsed / 1000) % 60)
-      return sec >= 10 ? sec : '0' + sec
+      sec >= 10 ? sec : '0' + sec
+      return sec
     }
   },
   methods: {
@@ -78,6 +81,7 @@ export default {
       if (this.$data.state == 'started') {
         this.currentTime = Date.now()
         this.hourBalance -= this.timeCoin
+        this.seconds % 8 <= 3 ? (this.coins = 'jobs') : (this.coins = 'skills')
       }
     }
   }

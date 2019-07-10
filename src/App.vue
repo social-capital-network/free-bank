@@ -28,7 +28,7 @@
         </app-column>
       </app-right-brain>
     </div>
-    <p>{{ brain }} c:{{ col }} r:{{ row }}</p>
+    <p>{{ server }} row {{ row }} col {{ col }} {{ brain }}</p>
     <router-view></router-view>
     <app-footer />
   </div>
@@ -49,9 +49,10 @@ export default {
       left: false,
       right: false,
       props: ['cols'],
-      brain: 'colab',
+      brain: 'collaborate',
       row: 0,
       col: 0,
+      server: 'bank server',
       online: true,
       deal: false,
       hovered: [
@@ -114,27 +115,26 @@ export default {
       if (dx > 0) {
         this.left = true
         this.right = false
-        this.brain = 'colab'
+        this.brain = 'collaborate'
       } else {
         this.left = false
         this.right = true
-        this.brain = 'compete'
+        this.brain = 'innovate'
       }
       let dy = this.y - 56
       let mdx = Math.ceil(dx / 12)
       this.col = -mdx
       let mdy = Math.ceil(dy / 12)
       this.row = mdy
+      this.row === 2
+        ? (this.server = 'bank server')
+        : this.row === 1
+        ? (this.server = 'jobs server')
+        : (this.server = 'skills server')
       if (mdx >= 0) {
         this.deal = !this.deal
         this.srv = mdx
         this.hovered[mdx] = true
-      }
-      console.log(this.left, this.right, mdx, mdy, this.x, this.y)
-      for (let h = 0; h < 16; h++) {
-        if (h >= 0 && h < 16 && h != mdx) {
-          this.hovered[h] = false
-        }
       }
     },
     hoverStyle() {
