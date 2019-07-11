@@ -16,9 +16,9 @@
     </h1>
     <h2>realtime growth:</h2>
     <h1>
-      <div id="rate">{{ hourRate }} r&#162;/sec</div>
+      <div id="rate">{{ rate }} r&#162;/sec</div>
     </h1>
-    <p>next generation ai banking protocol</p>
+    <p>dna/atp ai banking protocol</p>
     <!-- <h2><span id="time" v-html="time"></span></h2> -->
   </div>
 </template>
@@ -28,9 +28,9 @@ export default {
   data: function() {
     return {
       coins: 'jobs',
-      hourBalance: 3600,
+      hourBalance: 360,
       timeCoin: 1,
-      hourRate: -1.0,
+      rate: 9.0,
       state: 'started',
       startTime: Date.now(),
       currentTime: Date.now(),
@@ -82,7 +82,8 @@ export default {
     updateCurrentTime: function() {
       if (this.$data.state == 'started') {
         this.currentTime = Date.now()
-        this.hourBalance -= this.timeCoin
+        this.rate = 8 + Math.ceil(Math.random() * 3)
+        this.hourBalance += this.rate
         this.seconds % 9 <= 2
           ? (this.coins = 'jobs')
           : this.seconds % 9 <= 5
@@ -116,7 +117,8 @@ p {
 
 #wallet,
 #rate {
-  color: #f1453d;
+  /* color: #f1453d; */
+  color: #6aa84f;
   font-size: 2.8rem;
   text-align: center;
 }
