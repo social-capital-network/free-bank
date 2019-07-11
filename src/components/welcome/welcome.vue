@@ -12,7 +12,7 @@
     <p>bank on your live social capital</p>
     <h2>realtime wallet:</h2>
     <h1>
-      <div id="wallet">{{ hourBalance | currency('r&#162; ', 0) }}</div>
+      <div id="wallet">{{ wallet | currency('r&#162; ', 0) }}</div>
     </h1>
     <h2>realtime growth:</h2>
     <h1>
@@ -28,7 +28,7 @@ export default {
   data: function() {
     return {
       coins: 'jobs',
-      hourBalance: 360,
+      wallet: 3600,
       timeCoin: 1,
       rate: 9.0,
       state: 'started',
@@ -82,8 +82,8 @@ export default {
     updateCurrentTime: function() {
       if (this.$data.state == 'started') {
         this.currentTime = Date.now()
-        this.rate = 8 + Math.ceil(Math.random() * 3)
-        this.hourBalance += this.rate
+        this.rate = 3 + Math.ceil(Math.random() * 6)
+        this.wallet += this.rate
         this.seconds % 9 <= 2
           ? (this.coins = 'jobs')
           : this.seconds % 9 <= 5

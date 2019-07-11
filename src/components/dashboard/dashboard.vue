@@ -60,7 +60,7 @@
       </div>
       <div class="col text-right">
         <h4>
-          funds:
+          atp funds:
           {{ (hourBalance + funds).toFixed(0) | currency('r&#162; ', 0) }}
         </h4>
       </div>
@@ -76,17 +76,17 @@
         <div class="col">
           <form @submit.prevent="onSendTx">
             <div class="form-group">
-              <label for="recipient">Recipient cell</label>
+              <label for="recipient">Recipient Project cell</label>
               <input
                 v-model="outgoingTx.recipient"
                 type="text"
                 class="form-control"
                 id="recipient"
-                placeholder="Enter email - job id"
+                placeholder="Enter email + job id"
               />
             </div>
             <div class="form-group">
-              <label for="amount">Amount or Skill coin</label>
+              <label for="amount">Amount or Skill coin (dna/atp value)</label>
               <input
                 v-model.number="outgoingTx.amount"
                 type="number"
@@ -276,7 +276,7 @@ export default {
       success: null,
       hourBalance: 3600,
       timeCoin: 1,
-      hourRate: -1.0,
+      rate: 9.0,
       funds: 0,
       outgoingTx: {
         recipient: '',
@@ -351,7 +351,8 @@ export default {
     updateCurrentTime: function() {
       if (this.$data.state == 'started') {
         this.currentTime = Date.now()
-        this.funds -= this.timeCoin
+        this.rate = 3 + Math.ceil(Math.random() * 6)
+        this.funds += this.rate
       }
     },
     onCreateWallet: function() {
@@ -390,8 +391,8 @@ export default {
         .then(function(response) {
           vm.error = null
           vm.success =
-            'cell Public Key: ' +
-            response.data.public_key.substring(0, 20) +
+            'ai cell rate: 7.0 | Public Key: ' +
+            response.data.public_key.substring(0, 23) +
             ' ...'
           // ', Private Key: ' +
           // response.data.private_key
