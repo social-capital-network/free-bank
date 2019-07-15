@@ -40,4 +40,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Frontend Classes (yuml)
 
-![](http://yuml.me/diagram/scruffy/class/[Friend]<>1->*[Skills] 'yUML')
+![](http://yuml.me/diagram/scruffy/class/[Friend]<>1->\*[Skill Coins] 'yUML')

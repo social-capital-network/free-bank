@@ -1,7 +1,7 @@
 <template>
   <header id="header">
     <div class="logo">
-      <router-link to="/">ai economy</router-link>
+      <router-link to="/">social capital</router-link>
     </div>
     <nav>
       <ul>
