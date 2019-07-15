@@ -40,6 +40,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Frontend Classes (yuml)
 
-```yuml
-<img src="http://yuml.me/diagram/scruffy/class/[Account]++owner-0..&gt;[Repository]"/>
-```
+![](http://yuml.me/diagram/scruffy/class/[Customer]<>1->*[Order] 'yUML')
