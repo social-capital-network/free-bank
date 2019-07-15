@@ -41,20 +41,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Frontend Classes (yuml)
 
 ```yuml
-// {type:class}
-// {direction:topDown}
-// {generate:true}
+// {type: sequence}
+[A]>[B]
 
-[note: Frontend Bank Wallet Classes{bg:cornsilk}]
-[User]<&gt;1-projects 0..*&gt;[Job]
-[User]<&gt;1-services 0..*&gt;[Skill]
-[Job]++*-*&gt;[Task]
-[Job]-1&gt;[Top Social Solution]
-[Job]*-*&gt;[Product|UNSPSC_Code|price()|rc_price()]
-[Skill]-1&gt;[Task]
-[Skill]*-*&gt;[Product|UNSPSC_Code|price()|rc_price()]
-[Category Interest Tag]<-&gt;[Product]
-[Top Social Solution]^[Social Network]
-[Top Social Solution]^[Public]
-[note: Top Social Solution = Fair Social Engineered Solution{bg:cornsilk}]
 ```
