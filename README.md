@@ -38,6 +38,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## For Developers
 
+### Frontend Classes (yuml)
+
 ```yuml
 // {type:class}
 // {direction:topDown}
