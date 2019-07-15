@@ -41,7 +41,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Frontend Classes (yuml)
 
 ```yuml
-// {type: sequence}
-[A]>[B]
-
+<img src="http://yuml.me/diagram/scruffy/class/[Account]++owner-0..&gt;[Repository]"/>
 ```
