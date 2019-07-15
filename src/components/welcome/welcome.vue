@@ -1,7 +1,7 @@
 <template>
   <div id="welcome">
     <h1>i n n o v a t i o n</h1>
-    <h1>w a l l e t</h1>
+    <h1>rCoins w a l l e t</h1>
     <hr />
     <h1>realtime {{ coins }}</h1>
     <p>coin ai skills to match high pay jobs</p>
