@@ -38,6 +38,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## For Developers
 
-### Frontend Classes (yuml)
+### Frontend Classes (yUML test)
 
 ![](http://yuml.me/diagram/scruffy/class/[Friend]<>1->*[SkillCoins] 'yUML')
