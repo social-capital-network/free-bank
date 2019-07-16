@@ -40,6 +40,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Frontend Classes (yUML test)
 
+```yuml
 // {type:class}
 // {direction:topDown}
 
@@ -61,3 +62,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ![](http://yuml.me/diagram/scruffy/class/[TopSolution]^[Social Network] 'yUML')
 ![](http://yuml.me/diagram/scruffy/class/[TopSolution]^[Public] 'yUML')
+```
