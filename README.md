@@ -38,7 +38,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## For Developers
 
-### Frontend Classes (yUML test)
+### Frontend Classes (yUML test - to replace with image)
 
 // {direction:topDown}
 
