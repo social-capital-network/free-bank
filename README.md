@@ -40,7 +40,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Frontend Classes (yUML test)
 
-```yuml
 ![](http://yuml.me/diagram/scruffy/class/[User]<>1-projects 0..\_>[Job] 'yUML')
 
 ![](http://yuml.me/diagram/scruffy/class/[User]<>1-services 0..\_>[Skill] 'yUML')
@@ -60,4 +59,3 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ![](http://yuml.me/diagram/scruffy/class/[TopSolution]^[Social Network] 'yUML')
 
 ![](http://yuml.me/diagram/scruffy/class/[TopSolution]^[Public] 'yUML')
-```
