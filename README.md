@@ -56,6 +56,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ![](http://yuml.me/diagram/scruffy/class/[InterestTag]<->[Product] 'yUML')
 
-![](http://yuml.me/diagram/scruffy/class/[TopSolution]^[Social Network] 'yUML')
+![](http://yuml.me/diagram/scruffy/class/[TopSolution]^[SocialNetwork] 'yUML')
 
 ![](http://yuml.me/diagram/scruffy/class/[TopSolution]^[Public] 'yUML')
