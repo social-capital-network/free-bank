@@ -48,11 +48,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ![](http://yuml.me/diagram/scruffy/class/[Job]-1>[TopSolution] 'yUML')
 
-![](<http://yuml.me/diagram/scruffy/class/[Job]->[Product]> 'yUML')
+![](<http://yuml.me/diagram/scruffy/class/[Job]-1>[Product]> 'yUML')
 
 ![](http://yuml.me/diagram/scruffy/class/[Skill]-1>[Task] 'yUML')
 
-![](<http://yuml.me/diagram/scruffy/class/[Skill]->[Product]> 'yUML')
+![](<http://yuml.me/diagram/scruffy/class/[Skill]-1>[Product]> 'yUML')
 
 ![](http://yuml.me/diagram/scruffy/class/[InterestTag]<->[Product] 'yUML')
 
