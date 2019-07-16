@@ -41,6 +41,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Frontend Classes (yUML test)
 
 ![](http://yuml.me/diagram/scruffy/class/[User]<>1-projects 0..\_>[Job] 'yUML')
+
 ![](http://yuml.me/diagram/scruffy/class/[User]<>1-services 0..\_>[Skill] 'yUML')
 
 ![](http://yuml.me/diagram/scruffy/class/[Job]++*-*>[Task] 'yUML')
