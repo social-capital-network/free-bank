@@ -2,7 +2,7 @@
 // {direction:topDown}
 // {generate:true}
 
-[note: Frontend Bank Wallet Classes{bg:cornsilk}]
+[note: Social Capital Wallet Classes{bg:cornsilk}]
 [User]<>1-projects 0..*>[Job]
 [User]<>1-services 0..*>[Skill]
 [Job]++*-*>[Task]

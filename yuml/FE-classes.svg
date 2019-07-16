@@ -12,11 +12,11 @@
 <!-- A0 -->
 <g id="node1" class="node">
 <title>A0</title>
-<polygon fill="#fff8dc" stroke="#000000" points="144.4651,-390 26.2029,-390 26.2029,-354 150.4651,-354 150.4651,-384 144.4651,-390"/>
-<polyline fill="none" stroke="#000000" points="144.4651,-390 144.4651,-384 "/>
-<polyline fill="none" stroke="#000000" points="150.4651,-384 144.4651,-384 "/>
-<text text-anchor="middle" x="88.334" y="-375" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Frontend Bank Wallet</text>
-<text text-anchor="middle" x="88.334" y="-363" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Classes</text>
+<polygon fill="#fff8dc" stroke="#000000" points="144.4431,-390 56.2249,-390 56.2249,-354 150.4431,-354 150.4431,-384 144.4431,-390"/>
+<polyline fill="none" stroke="#000000" points="144.4431,-390 144.4431,-384 "/>
+<polyline fill="none" stroke="#000000" points="150.4431,-384 144.4431,-384 "/>
+<text text-anchor="middle" x="103.334" y="-375" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Social Capital</text>
+<text text-anchor="middle" x="103.334" y="-363" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Wallet Classes</text>
 </g>
 <!-- A1 -->
 <g id="node2" class="node">
