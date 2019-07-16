@@ -40,7 +40,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Frontend Classes (yUML test)
 
-![](http://yuml.me/diagram/scruffy/class/[note: Frontend Bank Wallet Classes{bg:cornsilk}] 'yUML')
 ![](http://yuml.me/diagram/scruffy/class/[User]<>1-projects 0.._>[Job] 'yUML')
 ![](http://yuml.me/diagram/scruffy/class/[User]<>1-services 0.._>[Skill] 'yUML')
 ![](http://yuml.me/diagram/scruffy/class/[Job]++*-*>[Task] 'yUML')
@@ -51,4 +50,3 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ![](http://yuml.me/diagram/scruffy/class/[Category Interest Tag]<->[Product] 'yUML')
 ![](http://yuml.me/diagram/scruffy/class/[Top Social Solution]^[Social Network] 'yUML')
 ![](http://yuml.me/diagram/scruffy/class/[Top Social Solution]^[Public] 'yUML')
-![](http://yuml.me/diagram/scruffy/class/[note: Top Social Solution = Fair Social Engineered Solution{bg:cornsilk}] 'yUML')
