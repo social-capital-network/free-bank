@@ -1,4 +1,4 @@
-# Social capital wallet app
+# Social capital banking app
 
 Next gen blockchain wallet for the social capital coins
 
