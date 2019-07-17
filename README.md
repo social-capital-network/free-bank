@@ -1,8 +1,10 @@
-# Your social capital wallet
+# Social capital wallet app
 
 Next gen blockchain wallet for the social capital coins
 
-![](/yuml/FE-classes.svg)
+## High level social capital banking diagram
+
+![](/yuml/social-capital-banking.svg)
 
 ## Web wallet setup
 
