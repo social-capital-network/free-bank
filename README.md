@@ -1,6 +1,8 @@
 # Your social capital wallet
 
-Next gen blockchain wallet for the ai economy skill coins
+Next gen blockchain wallet for the social capital coins
+
+![](/yuml/FE-classes.svg)
 
 ## Web wallet setup
 
