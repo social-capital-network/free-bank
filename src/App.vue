@@ -39,7 +39,7 @@ import Header from './components/header/header.vue'
 import LeftBrain from './components/brain/left-brain.vue'
 import RightBrain from './components/brain/right-brain.vue'
 import Column from './components/column/column.vue'
-import Cell from './components/cell/cell.vue'
+import Cell from './components/cell/cell48.vue'
 import Footer from './components/footer/footer.vue'
 
 export default {
@@ -267,12 +267,15 @@ p {
   background-color: skyblue;
 }
 .s13 {
-  background-color: brown;
+  background-color: #6aa84f;
+  /* background-color: brown; */
 }
 .s14 {
-  background-color: darkgoldenrod;
+  background-color: #6aa84f;
+  /* background-color: darkgoldenrod; */
 }
 .s15 {
-  background-color: darkolivegreen;
+  background-color: #6aa84f;
+  /* background-color: darkolivegreen; */
 }
 </style>
