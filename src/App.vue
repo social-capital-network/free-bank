@@ -39,7 +39,7 @@ import Header from './components/header/header.vue'
 import LeftBrain from './components/brain/left-brain.vue'
 import RightBrain from './components/brain/right-brain.vue'
 import Column from './components/column/column.vue'
-import Cell from './components/cell/cell48.vue'
+import Cell from './components/cell/cell.vue'
 import Footer from './components/footer/footer.vue'
 
 export default {

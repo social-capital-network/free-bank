@@ -1,7 +1,7 @@
 <template>
   <div id="welcome">
     <h1>social capital</h1>
-    <h1>skills &nbsp; wallet</h1>
+    <h1>skills &nbsp; bank</h1>
     <hr />
     <h1>realtime {{ coins }}</h1>
     <p>coin social skills to match valuable jobs</p>
@@ -12,13 +12,13 @@
     <p>bank on your live social capital</p>
     <h2>realtime wallet:</h2>
     <h1>
-      <div id="wallet">{{ wallet | currency('r&#162; ', 0) }}</div>
+      <div id="wallet">{{ wallet | currency('rb&#162; ', 0) }}</div>
     </h1>
     <h2>realtime growth:</h2>
     <h1>
-      <div id="rate">{{ rate }} r&#162;/sec</div>
+      <div id="rate">{{ rate }} rb&#162;/sec</div>
     </h1>
-    <p>dna/atp ai banking protocol</p>
+    <p>recombinant blockchain currencies</p>
     <!-- <h2><span id="time" v-html="time"></span></h2> -->
   </div>
 </template>

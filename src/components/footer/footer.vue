@@ -4,7 +4,7 @@
       <ul>
         <li>
           <a href="https://github.com/ai-economy/ai-eco-wallet"
-            >dev ai &#162;oins</a
+            >dev rb&#162; coins</a
           >
         </li>
         <li>
