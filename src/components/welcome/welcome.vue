@@ -4,7 +4,7 @@
     <h1>skills &nbsp; bank</h1>
     <hr />
     <h1>realtime {{ coins }}</h1>
-    <p>coin social skills to match valuable jobs</p>
+    <p>coin social skills to match high pay jobs</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
       <router-link to="/signin">Sign In</router-link>
